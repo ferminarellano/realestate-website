@@ -1,0 +1,10 @@
+*.pyc
+*~
+__pycache__
+naturenv
+db.sqlite3
+/static
+.DS_Store
+manage.py
+naturerich/settings_local.py
+naturerich/wsgi.py
