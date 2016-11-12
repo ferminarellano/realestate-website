@@ -1,4 +1,7 @@
 {% load admin_static %}
+{% load i18n %}
+{% load solo_tags %}
+{% get_solo 'website.SiteConfiguration' as site_config %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EcoReal - HTML5 Real Estate Template</title>
 
-    <meta name="description" content="EcoReal - HTML5 Bootstrap Site Template">
-    <meta name="keywords" content="real estate template, bootstrap real estate template, EcoReal">
+    <meta name="description" content="Nature Rich Properties Honduras is a Real Estate specialized on sale of lots and properties amidst natural views and areas.">
+    <meta name="keywords" content="nature rich, honduras, la ceiba, properties, ocean front, real estate">
     <meta name="author" content="Ecology Theme">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -59,15 +62,15 @@
 			<div class="col-lg-3 col-md-3 col-sm-4 header-call clearfix">
 			    <p>
                     <i class="fa fa-phone pull-left"></i>
-                    <span class="phone">123-456-7890</span><br/>
-                    <span class="info">info@example.com</span>
+                    <span class="phone">{{ site_config.telephone }}</span><br/>
+                    <span class="info">{{ site_config.email }}</span>
 				</p>
 			</div>
 			<div class="col-md-3 col-lg-3 col-sm-4 header-place clearfix">
 				<p>
     				<i class="fa fa-home pull-left"></i>
-                    <span class="address-title">777 seventh avenue</span><br/>
-                    <span class="address-desc">Downtown NY 01234</span>
+                    <span class="address-title">{{ site_config.address1 }}</span><br/>
+                    <span class="address-desc">{{ site_config.address2 }}</span>
 				</p>
 			</div>
 			<div class="col-md-3 col-lg-3 col-sm-4 header-social">
@@ -101,22 +104,6 @@
                 <div class="collapse navbar-collapse main-nav" id="navbar-collapse">
                     <ul class="nav navbar-nav main-menu">
                         <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="#">Pages</a>
-							<ul class="list-unstyled sub-menu">
-								<li><a href="sample-page.html">Sample Page</a></li>
-								<li><a href="single-property.html">Single Property Page</a></li>
-							</ul>
-						</li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blog-right-sidebar.html">Blog</a>
-                            <ul class="list-unstyled sub-menu">
-                                <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                <li><a href="blog-full-width.html">Blog Full Width</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="#contact-agent">Appointment</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                     <a href="" data-toggle="modal" data-target="#myModal" class="navbar-right">Schedule Visit</a>
@@ -185,8 +172,8 @@ FOOTER
 				<div class="row">
 					<div class="col-md-3 col-sm-6">
 						<div class="footer-widget about-us">
-							<h3>About us</h3>
-							<p>Proin sed accumsan justo Morbi nec convallis dui in rhoncus sem Duis nec ipsum sagittis mattis turpis quis, luctus urna Fusce gravida dictum lectus ut interdum.</p>
+							<h3>{% trans "About us" %}</h3>
+							<p>{{ site_config.about }}</p>
 						</div><!-- end .about-us -->
 						<div class="social-widget-links">
 							<ul class="list-unstyled list-inline">
@@ -199,45 +186,40 @@ FOOTER
 					</div><!-- end .col-md-3 -->
 					<div class="col-md-3 col-sm-6">
 						<div class="footer-widget twitter-widget">
-							<h3>Latest Tweets</h3>
+							<h3>{% trans "Latest Tweets" %}</h3>
 							<p class="clearfix">
 								<span class="twittes-icon pull-left"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></span>
 								<span class="twittes">Proin sed accumsan justo Morbi nec convallis dui in <a href="#">http://yourtwitternamehere/ourtwitternamehere</a> 1 hours ago</span>
 							</p>
-							<p class="clearfix">
-								<span class="twittes-icon pull-left"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-								</span><span class="twittes">Proin sed accumsan justo Morbi nec convallis dui in <a href="#">http://yourtwitternamehere/ourtwitternamehere</a> 1 hours ago</span>
-							</p>
+
 						</div><!-- end .about-us -->
 					</div><!-- end .col-md-3 -->
 					<div class="col-md-3  col-sm-6">
 						<div class="footer-widget latest-news">
-							<h3>Your Blog</h3>
+							<h3>{% trans "Your Blog" %}</h3>
                             <p class="pic1"><img src="http://placehold.it/100x70" alt="" class="img-responsive pull-left" /> <a href="">sed do eiusmod tem incididunt ut labore</a> <span>Jan 9, 2016</span></p>
-							<p class="pic2"><img src="http://placehold.it/100x70" alt="" class="img-responsive pull-left" /> <a href="">sed do eiusmod tem incididunt ut labore</a> <span>Jan 9, 2016</span></p>
-							<p class="pic3"><img src="http://placehold.it/100x70" alt="" class="img-responsive pull-left" /> <a href="">sed do eiusmod tem incididunt ut labore</a> <span>Jan 9, 2016</span></p>
 						</div><!-- end .about-us -->
 					</div><!-- end .col-md-3 -->
 					<div class="col-md-3 col-sm-6">
 						<div class="footer-widget contact-info">
-							<h3>Contact Info</h3>
+							<h3>{% trans "Contact Info" %}</h3>
 							<div class="contact-info">
 								<p class="clearfix">
 									<span class="contact-icon pull-left"><i class="fa fa-map-marker fa-2x"></i></span>
-									<span class="contact-details">777 seventh avenue,Downtown New York,NY 01234</span>
+									<span class="contact-details">{{ site_config.address1 }} {{ site_config.address2 }}</span>
 
 								</p>
 								<p class="clearfix">
 									<span class="contact-icon pull-left"><i class="fa fa-envelope fa-2x"></i></span>
-									<span class="contact-details">email@yourdomain.com</span>
+									<span class="contact-details">{{ site_config.email}}</span>
 								</p>
 								<p class="clearfix">
 									<span class="contact-icon pull-left"><i class="fa fa-phone fa-2x"></i></span>
-									<span class="contact-details">0123-456-7890</span>
+									<span class="contact-details">{{ site_config.telephone }}</span>
 								</p>
 								<p class="clearfix">
 									<span class="contact-icon pull-left"><i class="fa fa-globe fa-2x"></i></span>
-									<span class="contact-details">www.yourwebsite.com</span>
+									<span class="contact-details">{{ site_config.site_url }}</span>
 								</p>
 							</div>
 						</div>
@@ -249,7 +231,7 @@ FOOTER
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 copy-right">
-					<p>Copyright &copy; 2016 <a href="http://ecologytheme.com">Nature Rich Properties Honduras</a> All rights reserved</p>
+					<p>Copyright &copy; 2016 <a href="http://ecologytheme.com">{{ site_config.sitename }}</a> {% trans "All rights reserved" %}</p>
 				</div><!-- end .col-md-6 -->
 				<div class="col-md-6 col-sm-6 payment"></div><!-- end .col-md-6 -->
 			</div><!-- end .row -->

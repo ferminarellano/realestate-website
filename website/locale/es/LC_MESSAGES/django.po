@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-11 22:44-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:8
+msgid "Website"
+msgstr "Sitio Web"
+
+#: models.py:7
+msgid "Site name"
+msgstr "Nombre del sitio"
+
+#: models.py:8
+msgid "Site URL"
+msgstr "URL del sitio"
+
+#: models.py:9
+msgid "Telephone"
+msgstr "Teléfono"
+
+#: models.py:10
+msgid "Email"
+msgstr "Correo"
+
+#: models.py:11
+msgid "Address Line 1"
+msgstr "Direccion Línea 1"
+
+#: models.py:12
+msgid "Address Line 2"
+msgstr "Dirección Línea 2"
+
+#: models.py:13
+msgid "About"
+msgstr "Acerca de"
+
+#: models.py:16 models.py:19
+msgid "Site Configuration"
+msgstr "Configuración del Sitio"
+
+#: models.py:22
+msgid "Name"
+msgstr "Nombre"
+
+#: models.py:23
+msgid "URL"
+msgstr "URL"
+
+#: models.py:24
+msgid "Position"
+msgstr "Posición"
+
+#: models.py:25
+msgid "Active"
+msgstr "Activo"
+
+#: models.py:28 models.py:31
+msgid "Menu Item"
+msgstr "Item del Menu"
+
+#: models.py:32
+msgid "Menu items"
+msgstr "Items del Menu"
+
+#: templates/website/base.html:176
+msgid "About us"
+msgstr "Acerca de"
+
+#: templates/website/base.html:190
+msgid "Latest Tweets"
+msgstr "Últimos tweets"
+
+#: templates/website/base.html:200
+msgid "Your Blog"
+msgstr "Tu blog"
+
+#: templates/website/base.html:206
+msgid "Contact Info"
+msgstr "Información de Contacto"
+
+#: templates/website/base.html:235
+msgid "All rights reserved"
+msgstr "Todos los derechos reservados"
+
+#~ msgid "Menu Configuration"
+#~ msgstr "Configuración del Menu"
