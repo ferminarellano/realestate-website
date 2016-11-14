@@ -31,4 +31,21 @@ class MenuItem(models.Model):
         verbose_name = _("Menu Item")
         verbose_name_plural = _("Menu items")
 
-#class SocialProfiles(models.Model):
+class SocialProfile(models.Model):
+    options = (
+        ('facebook', 'Facebook'),
+        ('twitter', 'Twitter'),
+        ('linkedin', 'LinkedIn'),
+        ('google-plus', 'Google+'),
+    )
+    social_profile = models.CharField(choices=options, verbose_name=_("Social Profile"),max_length=20, default='facebook', unique=True)
+    url = models.URLField(verbose_name=_("Social Profile URL"))
+    position = models.PositiveIntegerField(verbose_name=_("Position"), unique=True)
+    active = models.BooleanField(verbose_name=_("Active"), default = True)
+
+    def __unicode__(self):
+        return unicode(_("Social Profile"))
+
+    class Meta:
+        verbose_name = _("Social Profile")
+        verbose_name_plural = _("Social Profiles")

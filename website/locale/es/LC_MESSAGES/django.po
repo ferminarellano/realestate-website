@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-11 22:44-0600\n"
+"POT-Creation-Date: 2016-11-12 15:56-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,23 +78,35 @@ msgstr "Item del Menu"
 msgid "Menu items"
 msgstr "Items del Menu"
 
-#: templates/website/base.html:176
+#: models.py:41 models.py:45 models.py:48
+msgid "Social Profile"
+msgstr "Perfil Social"
+
+#: models.py:42
+msgid "Social Profile URL"
+msgstr "Dirección de Perfil Social"
+
+#: models.py:49
+msgid "Social Profiles"
+msgstr "Perfiles Sociales"
+
+#: templates/website/base.html:178
 msgid "About us"
 msgstr "Acerca de"
 
-#: templates/website/base.html:190
+#: templates/website/base.html:192
 msgid "Latest Tweets"
 msgstr "Últimos tweets"
 
-#: templates/website/base.html:200
+#: templates/website/base.html:202
 msgid "Your Blog"
 msgstr "Tu blog"
 
-#: templates/website/base.html:206
+#: templates/website/base.html:208
 msgid "Contact Info"
 msgstr "Información de Contacto"
 
-#: templates/website/base.html:235
+#: templates/website/base.html:237
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
