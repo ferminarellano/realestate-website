@@ -13,8 +13,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'solo',
-    'website.apps.WebsiteConfig'
+    'stdimage',
+    'website.apps.WebsiteConfig',
+    'realestate.apps.RealestateConfig'
 ]
 
 MIDDLEWARE = [

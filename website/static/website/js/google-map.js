@@ -2,7 +2,7 @@ $(function () {
 
     function initMap() {
 
-        var location = new google.maps.LatLng(24.9045, 91.8611);
+        var location = new google.maps.LatLng(15.784229,-86.792254);
 
         var mapCanvas = document.getElementById('property-map');
         var mapOptions = {
@@ -14,7 +14,7 @@ $(function () {
         }
         var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        var markerImage = 'images/map-marker.png';
+        var markerImage = '/static/website/images/map-marker.png';
 
         var marker = new google.maps.Marker({
             position: location,
@@ -59,15 +59,6 @@ $(function () {
 				]
 			},
 			{
-				"featureType": "poi",
-				"elementType": "all",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
 				"featureType": "road",
 				"elementType": "all",
 				"stylers": [
@@ -103,18 +94,6 @@ $(function () {
 				"stylers": [
 					{
 						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "water",
-				"elementType": "all",
-				"stylers": [
-					{
-						"color": "#4cb050"
-					},
-					{
-						"visibility": "on"
 					}
 				]
 			}

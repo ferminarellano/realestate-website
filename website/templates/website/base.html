@@ -34,6 +34,7 @@
 	<link href="{% static "website/css/animate.css" %}" rel="stylesheet" />
     <link href="{% static "website/css/style.css" %}" rel="stylesheet" type="text/css" />
     <link href="{% static "website/css/responsive.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static "website/css/custom.css" %}" rel="stylesheet" type="text/css" />
 
     <!-- Important Owl stylesheet -->
     <link rel="stylesheet" href="{% static "website/css/owl.carousel.css" %}">
@@ -54,9 +55,9 @@
 <header>
     <div class="container">
 		<div class="row header">
-			<div class="col-lg-3 col-md-3 col-sm-12">
+			<div class="col-lg-4 col-md-4 col-sm-12">
 				<div class="logo">
-					<a href="#"><img src="{% static "website/images/logo.png" %}" alt="Logo"></a>
+					<a href="/"><img src="{% static "website/images/logo6.jpg" %}" alt="Logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-4 header-call clearfix">
@@ -73,7 +74,7 @@
                     <span class="address-desc">{{ site_config.address2 }}</span>
 				</p>
 			</div>
-			<div class="col-md-3 col-lg-3 col-sm-4 header-social">
+			<div class="col-md-2 col-lg-2 col-sm-4 header-social">
                 <ul class="list-unstyled list-inline">
                     {% for profile in social_profiles %}
                         <li><a href="{{ profile.url }}"><i class="fa fa-{{ profile.social_profile }}"></i></a></li>
@@ -102,7 +103,7 @@
                 </div>
                 <div class="collapse navbar-collapse main-nav" id="navbar-collapse">
                     <ul class="nav navbar-nav main-menu">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="/">{% trans "Home" %}</a></li>
                         {% for menu in menu_items %}
                             <li><a href="{{ menu.url }}">{{ menu.name }}</a></li>
                         {% endfor %}
@@ -151,7 +152,7 @@
 <!-- =========================
 FOOTER
 ============================== -->
-<footer class="footer">
+<footer class="footer parallax-window" data-parallax="scroll" data-image-src="/static/website/images/footer.jpg">
 <div class="footer-overlay">
     <div class="container">
         {% comment %}
@@ -227,23 +228,25 @@ FOOTER
 				</div>
 		</div><!-- end .footer-middle -->
 	</div>
-	<section class="footer-below">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-sm-6 copy-right">
-					<p>Copyright &copy; 2016 <a href="http://ecologytheme.com">{{ site_config.sitename }}</a> {% trans "All rights reserved" %}</p>
-				</div><!-- end .col-md-6 -->
-				<div class="col-md-6 col-sm-6 payment"></div><!-- end .col-md-6 -->
-			</div><!-- end .row -->
-		</div><!-- end .containter -->
-	</section>
+
 </div>
 </footer><!-- /END FOOTER SECTION -->
+<section class="footer-below">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 copy-right">
+                <p>Copyright &copy; 2016 <a href="http://www.naturerichproperties.com">{{ site_config.sitename }}</a> {% trans "All rights reserved" %}</p>
+            </div><!-- end .col-md-6 -->
+
+        </div><!-- end .row -->
+    </div><!-- end .containter -->
+</section>
 
 <!-- =========================
     SCRIPTS
 ============================== -->
 	<script src="{% static "website/js/jquery.js" %}"></script>
+	<script src="{% static "website/js/parallax.min.js" %}"></script>
 	<script src="{% static "website/js/bootstrap.min.js" %}"></script>
 	<script src="{% static "website/js/jquery.mixitup.js" %}"></script>
 	<script src="{% static "website/js/main.js" %}"></script>
@@ -252,6 +255,7 @@ FOOTER
 	<script src="{% static "website/js/wow.min.js" %}"></script>
 	<!-- AjaxChimp JS -->
     <script src="{% static "website/js/jquery.ajaxchimp.js" %}"></script>
+    {% block custom_js %}{% endblock %}
 
 </body>
 </html>

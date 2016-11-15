@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-15 10:05-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:8
+msgid "Real Estate"
+msgstr "Bienes Raices"
+
+#: models.py:7 models.py:19
+msgid "Name"
+msgstr "Nombre"
+
+#: models.py:8 templates/realestate/property-detail.html:83
+#: templates/realestate/property-detail.html:87
+msgid "Address"
+msgstr "Dirección"
+
+#: models.py:9 templates/realestate/property-detail.html:93
+msgid "Neighborhood"
+msgstr "Barrio/Colonia/Aldea"
+
+#: models.py:10 templates/realestate/property-detail.html:88
+msgid "City"
+msgstr "Ciudad"
+
+#: models.py:11 templates/realestate/property-detail.html:99
+msgid "State"
+msgstr "Departamento"
+
+#: models.py:12 templates/realestate/property-detail.html:100
+msgid "Country"
+msgstr "País"
+
+#: models.py:13 templates/realestate/property-detail.html:77
+msgid "Description"
+msgstr "Descripción"
+
+#: models.py:14
+msgid "Price"
+msgstr "Precio"
+
+#: models.py:20
+msgid "Active"
+msgstr "Activo"
+
+#: models.py:23 models.py:26
+msgid "Property"
+msgstr "Propiedad"
+
+#: models.py:27
+msgid "Properties"
+msgstr "Propiedades"
+
+#: templates/realestate/property-detail.html:17
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/realestate/property-detail.html:31
+msgid "For Sale"
+msgstr "En Venta"
+
+#: templates/realestate/property-detail.html:155
+msgid "Contact Info"
+msgstr "Información de Contacto"
+
+#: templates/realestate/property-detail.html:174
+msgid "Inquire about this property"
+msgstr "Solicita información de esta propiedad"
+
+#: templates/realestate/property-detail.html:179
+msgid "Your Name"
+msgstr "Tu Nombre"
+
+#: templates/realestate/property-detail.html:182
+msgid "Phone"
+msgstr "Teléfono"
+
+#: templates/realestate/property-detail.html:185
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#: templates/realestate/property-detail.html:188
+msgid "Hello, I am interested in [Single Family Home]..."
+msgstr "Hola, estoy interesado en [una casa de habitacion]..."
+
+#: templates/realestate/property-detail.html:190
+msgid "Request Info"
+msgstr "Solicitar Informacion"
+
+#: templates/realestate/property-detail.html:199
+msgid "Recent Properties"
+msgstr "Propiedades Recientes"

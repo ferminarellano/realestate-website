@@ -1,0 +1,29 @@
+.pic-address .property-price{
+    text-align: right;
+    margin: 0 10px 0 0;
+}
+
+.footer{
+    background: unset;
+    background-attachment: unset;
+    background-repeat: unset;
+    background-size: unset;
+    background-position: unset;
+}
+
+.footer-below{
+    background: url(/static/website/images/dark_wood.png);
+    background-size: 20%;
+    background: black;
+    text-align: center;
+        padding: 10px 0;
+}
+
+.logo{
+    margin-top: -12px;
+}
+
+.logo img{
+    width:auto;
+    height:85px;
+}

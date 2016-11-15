@@ -4,6 +4,7 @@ __pycache__
 naturenv
 db.sqlite3
 /static
+/media
 .DS_Store
 manage.py
 naturerich/settings_local.py

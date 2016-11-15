@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-12 15:56-0600\n"
+"POT-Creation-Date: 2016-11-15 12:44-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "Direccion Línea 1"
 msgid "Address Line 2"
 msgstr "Dirección Línea 2"
 
-#: models.py:13
+#: models.py:13 templates/website/about.html:17
 msgid "About"
 msgstr "Acerca de"
 
@@ -62,11 +62,11 @@ msgstr "Nombre"
 msgid "URL"
 msgstr "URL"
 
-#: models.py:24
+#: models.py:24 models.py:43
 msgid "Position"
 msgstr "Posición"
 
-#: models.py:25
+#: models.py:25 models.py:44
 msgid "Active"
 msgstr "Activo"
 
@@ -78,7 +78,7 @@ msgstr "Item del Menu"
 msgid "Menu items"
 msgstr "Items del Menu"
 
-#: models.py:41 models.py:45 models.py:48
+#: models.py:41 models.py:47 models.py:50
 msgid "Social Profile"
 msgstr "Perfil Social"
 
@@ -86,29 +86,113 @@ msgstr "Perfil Social"
 msgid "Social Profile URL"
 msgstr "Dirección de Perfil Social"
 
-#: models.py:49
+#: models.py:51
 msgid "Social Profiles"
 msgstr "Perfiles Sociales"
+
+#: templates/website/about.html:12
+msgid "About Nature Rich Properties"
+msgstr "Acerca de Nature Rich Properties"
+
+#: templates/website/about.html:16 templates/website/base.html:106
+#: templates/website/contact.html:18 templates/website/howto.html:16
+msgid "Home"
+msgstr "Inicio"
 
 #: templates/website/base.html:178
 msgid "About us"
 msgstr "Acerca de"
 
-#: templates/website/base.html:192
+#: templates/website/base.html:191
 msgid "Latest Tweets"
 msgstr "Últimos tweets"
 
-#: templates/website/base.html:202
+#: templates/website/base.html:201
 msgid "Your Blog"
 msgstr "Tu blog"
 
-#: templates/website/base.html:208
+#: templates/website/base.html:207
 msgid "Contact Info"
 msgstr "Información de Contacto"
 
-#: templates/website/base.html:237
+#: templates/website/base.html:239
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
+
+#: templates/website/contact.html:14 templates/website/contact.html:19
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+#: templates/website/contact.html:34
+msgid "Office Address"
+msgstr "Nuestra Dirección"
+
+#: templates/website/contact.html:44
+msgid "Phone Number"
+msgstr "Número Telefónico"
+
+#: templates/website/contact.html:45
+msgid "Mobile"
+msgstr "Móbil"
+
+#: templates/website/contact.html:53
+msgid "Email Address"
+msgstr "Correo Electrónico"
+
+#: templates/website/contact.html:67
+msgid "Say Hello! Don't be shy"
+msgstr "¡Dí Hola! No seas tímido"
+
+#: templates/website/contact.html:68
+msgid ""
+"If you have any question or comments, or would just like to say hello, just "
+"send us a message to our awesome team"
+msgstr ""
+"Si tienes alguna pregunta o comentarios, o solamente quisieras saludar, solo "
+"envía un mensaje a nuestro asombroso equipo"
+
+#: templates/website/contact.html:72
+msgid "Your Name"
+msgstr "Tú Nombre"
+
+#: templates/website/contact.html:73
+msgid "Your Email"
+msgstr "Tú Correo"
+
+#: templates/website/contact.html:74
+msgid "Subject"
+msgstr "Asunto"
+
+#: templates/website/contact.html:77
+msgid "Type Your message"
+msgstr "Escribe tu mensaje"
+
+#: templates/website/contact.html:80
+msgid "Send Message"
+msgstr "Enviar mensaje"
+
+#: templates/website/howto.html:12
+msgid "How-To Guide"
+msgstr "Guía Tutorial"
+
+#: templates/website/howto.html:17
+msgid "How-To"
+msgstr "Como Comprar"
+
+#: templates/website/index.html:12
+msgid "Latest"
+msgstr "Últimas"
+
+#: templates/website/index.html:12
+msgid "Properties"
+msgstr "Propiedades"
+
+#: templates/website/index.html:13
+msgid ""
+"Here you can find our exclusive listing of nature rich properties in Honduras"
+msgstr ""
+"Aquí puedes encontrar nuestro exclusivo listado de propiedades ricas en "
+"naturaleza en Honduras"
 
 #~ msgid "Menu Configuration"
 #~ msgstr "Configuración del Menu"

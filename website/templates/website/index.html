@@ -1,10 +1,66 @@
 {% extends "website/base.html" %}
 {% load admin_static %}
+{% load humanize %}
+{% load i18n %}
 
 {% block content %}
-<section class="single-property">
-    <div class="container">
-        <h1>Hello World!</h1>
-    </div>
+<section class="latest-property">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="property">
+					<h1 class="section-heading wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0s; animation-name: fadeInUp;">{% trans "Latest" %} <span>{% trans "Properties" %}</span></h1>
+					<p class="section-desc wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0s; animation-name: fadeInUp;">{% trans "Here you can find our exclusive listing of nature rich properties in Honduras" %}</p>
+				</div>
+			</div><!-- end .col-md-12 -->
+		</div><!-- end .row -->
+	</div><!-- end .container -->
 </section>
+
+<section class="property-lists">
+    <div class="container">
+        <div class="row">
+            {% for property in properties %}
+                <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="latest-pic1" style="background-image: url({{ property.picture.medium.url }});">
+                    </div><!-- end .latest-pic -->
+                    <div class="latest-pic-bottom">
+                        <div class="pic-address">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div>
+                                        {{ property.address }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="property-price">
+                                        <span>${{ property.price | floatformat:"0" | intcomma  }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div><!-- end .pic-address -->
+                        <div class="description-wrap">
+                            <div class="pic-description">
+                                <h3><a href="realestate/detail/{{ property.id }}">{{ property.name }}</a></h3>
+                                <p class="property-description-nrp">{{ property.description | truncatechars:100 }}
+                            </p></div><!-- end .pic-description -->
+                            <div class="pic-mesure" style="border-top: none;">
+                                {% comment %}
+                                <span><i class="fa fa-object-group"></i> 800 sq ft</span>
+                                <span><i class="fa fa-bed"></i> 2 Badrooms</span>
+                                <span><i class="fa fa-retweet"></i> 2 Baths</span>
+                                {% endcomment %}
+                            </div><!-- end .pic-mesure -->
+                        </div><!-- end .desctription-wrapper -->
+                    </div> <!-- end .latest-pic-bottom -->
+                </div><!-- end .col-md-4 -->
+				{% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+            {% endfor %}
+
+        </div><!-- end .row -->
+    </div><!-- end .container -->
+</section>
+
 {% endblock %}

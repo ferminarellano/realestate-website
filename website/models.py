@@ -13,7 +13,7 @@ class SiteConfiguration(SingletonModel):
     about = models.TextField(verbose_name=_("About"), blank=True, null=True)
 
     def __unicode__(self):
-        return _("Site Configuration")
+        return unicode(_("Site Configuration"))
 
     class Meta:
         verbose_name = _("Site Configuration")

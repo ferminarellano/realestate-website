@@ -51,8 +51,8 @@
 }
 
 /*---------------------------------------
- 1 GENERAL STYLES                
------------------------------------------*/  
+ 1 GENERAL STYLES
+-----------------------------------------*/
 body {
 	background: #ffffff;
 	font-family: 'Open Sans', sans-serif;
@@ -77,8 +77,8 @@ p{
 }
 
 /*---------------------------------------
- 2 HEADER                
------------------------------------------*/  
+ 2 HEADER
+-----------------------------------------*/
 .header{
 	padding:30px 0px;
 	line-height:2px;
@@ -126,7 +126,7 @@ p{
 .info{
 }
 .address-title{
-	font-weight:bold; 
+	font-weight:bold;
 }
 .address-desc{
 }
@@ -176,8 +176,8 @@ p{
 }
 
 /*---------------------------------------
- 2 NAVIGATION               
------------------------------------------*/ 
+ 2 NAVIGATION
+-----------------------------------------*/
 .navbar{
 	background:#4CB050;
 	margin:0px;
@@ -345,12 +345,12 @@ p{
    padding-right:0px !important;
  }
 /*---------------------------------------
- 3 introduction               
------------------------------------------*/ 
+ 3 introduction
+-----------------------------------------*/
 .introduction{
-	min-height:700px; 
+	min-height:700px;
 }
-.bottom-intro{ 
+.bottom-intro{
 	border-radius: 3px;
     bottom: 0;
     height: 224px;
@@ -411,7 +411,7 @@ p{
 	height:223px;
 	background-image:url("../images/divider.png");
 	background-repeat:repeat-y;
-	background-position:right; 
+	background-position:right;
 	padding:50px 40px 40px 40px;
 }
 .bedrooms p{
@@ -433,11 +433,11 @@ p{
     color:#fff;
 	text-transform:uppercase;
     font-weight:bold;
-	font-size:28px; 
+	font-size:28px;
 	padding-top:90px;
     text-align: center;
 }
- 
+
 .details{
 	background:rgba(0,0,0,0.9);
 	height:223px;
@@ -505,9 +505,9 @@ p{
     font-size: 60px;
 }
 /*---------------------------------------
- 3 about               
------------------------------------------*/ 
-.about{ 
+ 3 about
+-----------------------------------------*/
+.about{
 	margin: 0;
 	padding: 90px 0 40px;
 }
@@ -562,9 +562,9 @@ p{
 	text-align:center;
 }
 /*---------------------------------------
- 4 property               
------------------------------------------*/  
-.property{ 
+ 4 property
+-----------------------------------------*/
+.property{
 	padding:0px;
 }
 .drawing-room, .dining-room, .bed-room, .kitchen-room{
@@ -596,13 +596,13 @@ p{
     opacity: 0;
 }
 /*---------------------------------------
- 5 about bottom               
------------------------------------------*/ 
-.about-bottom{  
+ 5 about bottom
+-----------------------------------------*/
+.about-bottom{
 	padding: 100px 0 50px 0;
     text-align: center;
 }
-.about-bottom .fig{  
+.about-bottom .fig{
     display: block;
     height: 124px;
     margin: 0 auto 25px;
@@ -618,7 +618,7 @@ p{
   padding-top: 10px;
 }
 .about-bottom span{
-	font-size:16px; 
+	font-size:16px;
 	display:block;
 	line-height:22px;
 	text-transform:uppercase;
@@ -629,7 +629,7 @@ p{
 }
 .about-bottom .fign{
 	font-size:24px;
-    padding-top:10px; 
+    padding-top:10px;
 }
 .about-bottom .col-md-2:hover .fig::before {
     border-color: #4CB050;
@@ -649,8 +649,8 @@ p{
   transform: translate(0px, -10px) scale(0.85);
 }
 /*---------------------------------------
- 6 property-details               
------------------------------------------*/ 
+ 6 property-details
+-----------------------------------------*/
 .property-details{
     background: #f5f5f9;
     padding: 50px 0 100px;
@@ -668,7 +668,7 @@ p{
 	padding:0px 0 30px 0px;
 }
 .property-details ul li{
-	display:inline; 
+	display:inline;
 	float:left;
 	background:#ececec;
 	text-transform:uppercase;
@@ -676,13 +676,13 @@ p{
 	font-size:15px;
     text-align: center;
     margin-right:15px;
-} 
+}
 .property-details ul li.active{
 	background:#4cb050;
     transition:.5s ease;
 }
 .property-details ul li.active a{
-	color:#fff; 
+	color:#fff;
     outline: none;
 }
 .property-details ul li a{
@@ -696,7 +696,7 @@ p{
 .property-details ul li a:hover{
 	text-decoration:none;
 }
-.property-details p{ 
+.property-details p{
 	padding:45px 0px;
 	text-align:justify;
 	color:#999999;
@@ -710,16 +710,16 @@ p{
     color:#4CB050;
 }
 .water-strg span strong{
-	font-weight:400; 
+	font-weight:400;
 	color:#727272;
 }
 .property-pic img {
   margin-top: 50px;
 }
 /*---------------------------------------
- 7 photo-gallery               
------------------------------------------*/ 
-.photo-gallery{ 
+ 7 photo-gallery
+-----------------------------------------*/
+.photo-gallery{
 	margin:0px;
     padding-top:90px;
 }
@@ -746,7 +746,7 @@ p{
 }
 .photo-gallery p{
 	text-align:center;
-	padding:20px 0 40px 0; 
+	padding:20px 0 40px 0;
 }
 .controls{
     text-align:center;
@@ -769,8 +769,8 @@ p{
     color: #fff;
 }
 /*---------------------------------------
- 8 photo-gallery-pic               
------------------------------------------*/ 
+ 8 photo-gallery-pic
+-----------------------------------------*/
 .container-mix .mix{
     display: none;
 }
@@ -815,9 +815,9 @@ figure.effect-zoe figcaption a:hover{
 	text-decoration:none;
 }
 /*---------------------------------------
- 9 Nearby Place               
------------------------------------------*/ 
-.nearby-place{ 
+ 9 Nearby Place
+-----------------------------------------*/
+.nearby-place{
 	margin:0px;
     padding: 90px 0 0 0;
 }
@@ -865,28 +865,28 @@ figure.effect-zoe figcaption a:hover{
 	background: #07A3D6;
 }
 .location span{
-	display:block; 
+	display:block;
 }
 .location .club{
-	text-align:left; 
+	text-align:left;
 	text-transform:uppercase;
 }
 .location .school{
 	font-weight:700;
 	font-size:28px;
-	color:#000000; 
+	color:#000000;
 }
 .location .school-distance{
 	color:red;
 }
 .location .school-name{
     text-transform:capitalize;
-	font-size:14px; 
+	font-size:14px;
     line-height: 30px;
 }
 .location .golf{
 	text-transform:capitalize;
-	font-size:14px; 
+	font-size:14px;
     line-height: 30px;
 }
 .location .golf-distance{
@@ -894,7 +894,7 @@ figure.effect-zoe figcaption a:hover{
 }
 .location .hopital{
 	text-transform:capitalize;
-	font-size:14px; 
+	font-size:14px;
     line-height: 30px;
 }
 .location .hopital-distance{
@@ -909,8 +909,8 @@ figure.effect-zoe figcaption a:hover{
 	color:#07a3d6;
 }
 /*---------------------------------------
- 10 map               
------------------------------------------*/ 
+ 10 map
+-----------------------------------------*/
     #property-map {
         height:500px;
         width:100%;
@@ -926,10 +926,10 @@ figure.effect-zoe figcaption a:hover{
         color: #4272db;
     }
 /*---------------------------------------
- 11 Latest property               
------------------------------------------*/ 
-.latest-property{ 
-	margin:0px;	
+ 11 Latest property
+-----------------------------------------*/
+.latest-property{
+	margin:0px;
     padding: 95px 0 70px 0;
 }
 .property-lists{
@@ -1001,7 +1001,7 @@ figure.effect-zoe figcaption a:hover{
 }
 .latest-pic-bottom .pic-address{
 	background:#4cb050;
-	color:#fff; 
+	color:#fff;
 	padding:10px;
 }
 .latest-pic-bottom .pic-address span{
@@ -1009,7 +1009,7 @@ figure.effect-zoe figcaption a:hover{
 	margin-left:25px;
 	font-size:20px;
 }
-.description-wrap{ 
+.description-wrap{
 	overflow:hidden;
 	border-left:1px solid #a9a9a9;
 	border-right:1px solid #a9a9a9;
@@ -1022,7 +1022,7 @@ figure.effect-zoe figcaption a:hover{
 .pic-description h3{
 	font-weight:bold;
 	text-transform:uppercase;
-	font-size:18px; 
+	font-size:18px;
     margin-top:10px;
 }
 .pic-description > p {
@@ -1038,7 +1038,7 @@ figure.effect-zoe figcaption a:hover{
 .pic-mesure{
 	padding:10px;
 	border-top:1px solid #a9a9a9;
-	border-bottom:1px solid #a9a9a9; 
+	border-bottom:1px solid #a9a9a9;
 	color:#000;
 }
 .pic-mesure span{
@@ -1053,20 +1053,20 @@ figure.effect-zoe figcaption a:hover{
 	margin-right:5px;
 }
 /*---------------------------------------
- 12 Contract                  
------------------------------------------*/ 
+ 12 Contract
+-----------------------------------------*/
 .contract-section{
     background: #4cb050;
 }
 .contract-pic{
 }
-.contract-pic img{ 
+.contract-pic img{
 }
 .contract-left{
 	color:#fff;
 	padding-top:50px;
     padding-bottom:50px;
-	text-align:left; 
+	text-align:left;
 }
 .contract-left h2{
 	font-size:22px;
@@ -1078,7 +1078,7 @@ figure.effect-zoe figcaption a:hover{
 	background:#4cb050;
 	width:350px;
 	height:35px;
-	padding-left:10px; 
+	padding-left:10px;
 	border:1px solid #fff;
 	color:#fff;
 }
@@ -1136,8 +1136,8 @@ figure.effect-zoe figcaption a:hover{
   padding-top: 2px;
 }
 /*---------------------------------------
- 13 sell property                  
------------------------------------------*/ 
+ 13 sell property
+-----------------------------------------*/
 .sell-property{
 	background:url(http://placehold.it/1900x500);
     background-attachment: fixed;
@@ -1153,13 +1153,13 @@ figure.effect-zoe figcaption a:hover{
 .call-us{
 	color:#fff;
 	text-transform:uppercase;
-	padding-top:60px; 
+	padding-top:60px;
 	text-align:left;
 }
 .call-us h3{
 	font-weight:bold;
 	font-size:22px;
-} 
+}
 .sell-contact{
 	padding-top:90px;
 	text-align:right;
@@ -1177,16 +1177,16 @@ figure.effect-zoe figcaption a:hover{
 	text-transform:uppercase;
 	font-weight:bold;
 	font-size:14px;
-	margin-left:10px; 
+	margin-left:10px;
 }
 .sell-contact a:hover{
     text-decoration: none;
 }
 /*---------------------------------------
- 14 our blog                  
------------------------------------------*/ 
-.our-blog{ 
-	margin:0px; 
+ 14 our blog
+-----------------------------------------*/
+.our-blog{
+	margin:0px;
 }
 .blog{
 	margin:100px;
@@ -1259,7 +1259,7 @@ figure.effect-zoe figcaption a:hover{
 	background:url(http://placehold.it/260x240)no-repeat;
 	height:250px;
 	padding-left:270px;
-}  
+}
 .blog-row-one{
 	margin-bottom:50px;
 }
@@ -1271,7 +1271,7 @@ figure.effect-zoe figcaption a:hover{
 	overflow:hidden;
 }
 .blog-content3{
-	text-align:left; 
+	text-align:left;
 	padding-right:10px;
 }
 .blog-content3 .blog-admin3{
@@ -1311,13 +1311,13 @@ figure.effect-zoe figcaption a:hover{
 .blog-content3 a{
 	background:#4cb050;
 	color:#fff;
-	font-size:14px; 
-	padding:5px 22px; 
+	font-size:14px;
+	padding:5px 22px;
 	font-weight:bold;
 	text-decoration:none;
 	margin-top:0px;
-	margin-left:220px; 
-	position:absolute; 	
+	margin-left:220px;
+	position:absolute;
 }
 .blog-pic4{
 	background:url(http://placehold.it/260x240)no-repeat;
@@ -1327,10 +1327,10 @@ figure.effect-zoe figcaption a:hover{
 	overflow:hidden;
 }
 /*---------------------------------------
- 15 testimonial                  
+ 15 testimonial
 -----------------------------------------*/
-.testimonials{ 
-	margin:0px; 
+.testimonials{
+	margin:0px;
 }
 .testimonials-title{
 	margin-top:100px;
@@ -1418,7 +1418,7 @@ figure.effect-zoe figcaption a:hover{
     clear:both;
 }
 /*---------------------------------------
- 16 Royals group                  
+ 16 Royals group
 -----------------------------------------*/
 .royals-group{
 	background:url("../images/testimonial3.png")no-repeat;
@@ -1434,11 +1434,11 @@ figure.effect-zoe figcaption a:hover{
 	margin-bottom:40px;
 }
 .royals-group span{
-	display:block; 
+	display:block;
 }
 .royals-group .ceo-name{
 	font-weight:bold;
-} 
+}
 .squar-pic{
 	margin:40px;
 }
@@ -1446,12 +1446,12 @@ figure.effect-zoe figcaption a:hover{
 	margin:10px;
 }
 /*---------------------------------------
- 17 Footer                  
+ 17 Footer
 -----------------------------------------*/
-.footer{ 
+.footer{
 	margin-top:50px;
 	color:#fff;
-	background:url(http://placehold.it/1900x500);
+	background:url(/static/website/images/footer.jpg);
 	background-attachment:fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1464,7 +1464,7 @@ figure.effect-zoe figcaption a:hover{
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: -1;   
+  z-index: -1;
 }
 .subscribe{
 	background:#4cb050;
@@ -1474,27 +1474,27 @@ figure.effect-zoe figcaption a:hover{
 	padding-top:30px;
     border-radius:0;
 }
- 
+
 .subscribe .newsletter{
 	margin-left:0px;
 	padding-top:15px;
 	padding-left: 15px;
 }
-.subscribe  .newsletter span{ 
-	font-weight:600; 
-	font-size:24px;  
+.subscribe  .newsletter span{
+	font-weight:600;
+	font-size:24px;
 }
 .subscribe .subscribe-email{
 	margin-left:-40px;
-	padding-left:0px; 
+	padding-left:0px;
 }
 .subscribe input[type=email]{
 	background:#4cb050;
-	border:1px solid #fff; 
+	border:1px solid #fff;
 	width:510px;
-	height:50px; 
-	padding-left:30px;  
-	color:#ffffff; 
+	height:50px;
+	padding-left:30px;
+	color:#ffffff;
 	margin-bottom:30px;
 }
 .subscribe input[type=submit]{
@@ -1533,7 +1533,7 @@ figure.effect-zoe figcaption a:hover{
 	margin-bottom:40px;
 	display:block;
 }
-.footer-bottom .footer-widget{ 
+.footer-bottom .footer-widget{
 	color:#fff;
 	line-height:30px;
 }
@@ -1552,18 +1552,18 @@ figure.effect-zoe figcaption a:hover{
   width: 60px;
 }
 .footer-bottom .footer-widget p{
-	text-align:left; 
+	text-align:left;
 }
-.footer-bottom .footer-widget .twittes{ 
+.footer-bottom .footer-widget .twittes{
 	padding-left:50px;
 	line-height:20px;
 	font-size:14px;
-} 
+}
 .footer-widget p span.twittes a{
 	text-decoration:none;
 	color:#4cb050;
 }
-.contact-info p { 
+.contact-info p {
 
 }
 .social-widget-links{
@@ -1584,9 +1584,9 @@ figure.effect-zoe figcaption a:hover{
 	background:#3c3c44;
 	color:#fff;
 }
-.footer-below{ 
+.footer-below{
 	background:#000;
-	padding:22px 0; 
+	padding:22px 0;
 }
 .footer-below .copy-right{
 	padding-top:5px;
@@ -1658,8 +1658,8 @@ figure.effect-zoe figcaption a:hover{
 
 
 /*---------------------------------------
- Contact Us Page - Header Banner             
------------------------------------------*/ 
+ Contact Us Page - Header Banner
+-----------------------------------------*/
 .header-banner {
     background: url(http://placehold.it/1900x500);
     background-position: 100%;
@@ -1693,13 +1693,13 @@ figure.effect-zoe figcaption a:hover{
     text-decoration: none;
 }
 /*---------------------------------------
- Contact Map             
+ Contact Map
 -----------------------------------------*/
 .contact-map{
     margin-bottom: -50px;
 }
 /*---------------------------------------
- Contact Details            
+ Contact Details
 -----------------------------------------*/
 .contact-page-details{
     padding: 50px 0;
@@ -1727,7 +1727,7 @@ figure.effect-zoe figcaption a:hover{
 }
 .contact-page-details .contact-box p.col-sm-9 span{
     display: block;
-    margin-left:20px; 
+    margin-left:20px;
 }
 .contact-page-details .contact-box p.col-sm-9 span.contact-box-heading{
     color:#313131;
@@ -1739,7 +1739,7 @@ figure.effect-zoe figcaption a:hover{
 }
 
 /*---------------------------------------
- Contact Form        
+ Contact Form
 -----------------------------------------*/
 .contact-form{
     padding-bottom: 100px;
@@ -1787,8 +1787,8 @@ figure.effect-zoe figcaption a:hover{
 
 
 /*---------------------------------------
- About Us Page - Header Banner             
------------------------------------------*/ 
+ About Us Page - Header Banner
+-----------------------------------------*/
 .about-banner-bg {
     background: url(http://placehold.it/1900x500);
     background-position: 100%;
@@ -1817,7 +1817,7 @@ figure.effect-zoe figcaption a:hover{
 }
 .pdfone{
     text-align: center;
-    padding-top:5px; 
+    padding-top:5px;
 }
 .pdftwo{
     text-align: left;
@@ -2073,7 +2073,7 @@ property-small-picture a img{
 
 
 /*---------------------------------------
- Sample Page Styles            
+ Sample Page Styles
 -----------------------------------------*/
 .page-content {
   padding: 60px 0;
@@ -2149,7 +2149,7 @@ property-small-picture a img{
 
 
 /* =======================================
- Single Property Page          
+ Single Property Page
 ======================================== */
 .single-property{
     background: #f8f8f8;
@@ -2341,7 +2341,7 @@ h2.pd-title:after{
     columns: 3 auto;
     -moz-columns:3 auto;
     -webkit-columns:3 auto;
-    
+
 }
 .property-features ul li{
     padding: 5px 0;

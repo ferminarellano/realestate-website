@@ -1,0 +1,246 @@
+{% extends "website/base.html" %}
+{% load admin_static %}
+{% load humanize %}
+{% load i18n %}
+
+{% block content %}
+
+<section class="header-banner single-property-banner">
+    <div class="banner-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h2>{{ property.name }}</h2>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <ol class="breadcrumb">
+                        <li><a href="">{% trans "Home" %}</a></li>
+                        <li><a class="active">{{ property.name }}</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="single-property">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="property-name">
+					<h2>{{ property.name }} <span>{% trans "For Sale" %}</span> </h2>
+					<p>{{ property.address }}</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="property-price">
+					<h2>${{ property.price | floatformat:"0" | intcomma}}</h2>
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<div class="property-gallery">
+					<img src="{{ property.picture.large.url }}" alt="">
+                    {% comment %}
+					<div class="property-agent">
+						<div class="agent-media clearfix">
+							<img src="http://placehold.it/150x150" alt="" class="pull-left">
+							<ul>
+							    <li>Contact Agent</li>
+							    <li><i class="fa fa-user"></i> Brittany Watkins</li>
+							    <li><i class="fa fa-phone"></i> 321 456 9874</li>
+							    <li><a href="#">View My Listings</a></li>
+							</ul>
+						</div>
+						<form action="#">
+							<input type="text" placeholder="Your Name">
+							<input type="text" placeholder="Phone">
+							<input type="email" placeholder="Email">
+							<textarea placeholder="Hello, I am interested in [Sigle Family Home]..."></textarea>
+							<input type="submit" value="Request Info">
+						</form>
+					</div>
+					<div class="property-share">
+					    <ul class="list-unstyled">
+					        <li><a href=""><i class="fa fa-share-alt"></i></a></li>
+					        <li><a href=""><i class="fa fa-heart"></i></a></li>
+					        <li><a href=""><i class="fa fa-print"></i></a></li>
+					    </ul>
+					</div>
+                    {% endcomment %}
+				</div>
+			</div>
+
+			<div class="col-sm-9 single-property-details">
+                <div class="property-description">
+                    <h2 class="pd-title">{% trans "Description" %}</h2>
+                    <p>{{ property.description }}</p>
+
+                </div><!-- End Property Description -->
+
+                <div class="property-location">
+                   <h2 class="pd-title">{% trans "Address" %}</h2>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <ul>
+                                <li><strong>{% trans "Address" %}:</strong> {{ property.address }}</li>
+                                <li><strong>{% trans "City" %}:</strong> {{ property.city }}</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul>
+                                <li><strong>{% trans "Neighborhood" %}:</strong> {{ property.neighborhood }}</li>
+
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul>
+                                <li><strong>{% trans "State" %}:</strong> {{ property.state }}</li>
+                                <li><strong>{% trans "Country" %}:</strong> {{ property.country }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- End Property Location -->
+                {% comment %}
+                <div class="property-details-list">
+                    <h2 class="pd-title">Details</h2>
+                    <div class="alert alert-success">
+                        <ul class="list-details">
+                            <li><strong>Property ID:</strong> HZ33</li>
+                            <li><strong>Price:</strong> $670,000</li>
+                            <li><strong>Property Size:</strong> 1200 Sq Ft</li>
+                            <li><strong>Bedrooms:</strong> 4</li>
+                            <li><strong>Bathrooms:</strong> 2</li>
+                            <li><strong>Garage:</strong> 1</li>
+                            <li><strong>Garage Size:</strong> 200 SqFt</li>
+                            <li><strong>Year Built:</strong> 2016-01-09</li>
+                        </ul>
+                    </div>
+
+                    <h3>Additional Details</h3>
+                    <ul class="list-details">
+                        <li><strong>Deposit:</strong> 20%</li>
+                        <li><strong>Pool Size:</strong> 300 Sqft</li>
+                        <li><strong>Last remodel year:</strong> 1987</li>
+                        <li><strong>Amenities:</strong> Clubhouse</li>
+                        <li><strong>Additional Rooms::</strong> Guest Bath</li>
+                        <li><strong>Equipment:</strong> Grill - Gas</li>
+                    </ul>
+                </div><!-- End Property details List -->
+
+                <div class="property-features">
+                    <h2 class="pd-title">Features</h2>
+                    <ul class="list-features">
+                        <li><i class="fa fa-check"></i> Air Conditioning</li>
+                        <li><i class="fa fa-check"></i> Barbeque</li>
+                        <li><i class="fa fa-check"></i> Dryer</li>
+                        <li><i class="fa fa-check"></i> Gym</li>
+                        <li><i class="fa fa-check"></i> Laundry</li>
+                        <li><i class="fa fa-check"></i> Lawn</li>
+                        <li><i class="fa fa-check"></i> Swiming Pool</li>
+                        <li><i class="fa fa-check"></i> Yard</li>
+                        <li><i class="fa fa-check"></i> WiFi</li>
+                        <li><i class="fa fa-check"></i> TV Cable</li>
+                        <li><i class="fa fa-check"></i> Washer</li>
+                        <li><i class="fa fa-check"></i> Window Coverage</li>
+                        <li><i class="fa fa-check"></i> Outdoor Shower</li>
+                        <li><i class="fa fa-check"></i> Sauna</li>
+                        <li><i class="fa fa-check"></i> Nicrowave</li>
+                    </ul>
+                </div><!-- End Property Featues -->
+                {% endcomment %}
+                <div class="property-contact-info">
+                    <h2 class="pd-title">{% trans "Contact Info" %}</h2>
+                    <div class="agent-media clearfix">
+                        {% comment %}
+                        <img src="http://placehold.it/150x150" alt="" class="pull-left">
+                        <ul>
+                            <li>Contact Agent</li>
+                            <li><i class="fa fa-user"></i> Brittany Watkins</li>
+                            <li><i class="fa fa-phone"></i> 321 456 9874</li>
+                            <li>
+                                <span><a href="#"><i class="fa fa-facebook-square"></i> Facebook</a></span>
+                                <span><a href="#"><i class="fa fa-twitter-square"></i> Twitter</a></span>
+                                <span><a href="#"><i class="fa fa-linkedin-square"></i> Linkedin</a></span>
+                                <span><a href="#"><i class="fa fa-google-plus-square"></i> Google Plus</a></span>
+                            </li>
+                        </ul>
+                        {% endcomment %}
+                    </div>
+
+                    <h3>{% trans "Inquire about this property" %}</h3>
+                    <form action="#">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="{% trans "Your Name" %}">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="{% trans "Phone" %}">
+                                </div>
+                                <div class="col-sm-4">
+                                    <input type="email" placeholder="{% trans "Email" %}">
+                                </div>
+                                <div class="col-sm-12">
+                                    <textarea placeholder="{% trans "Hello, I am interested in [Single Family Home]..."%}"></textarea>
+                                </div>
+                                <input type="submit" value="{% trans "Request Info" %}">
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- End Property Contact Info -->
+			</div><!-- End property details -->
+
+			<aside class="col-sm-3">
+			    <div class="sidebar-widget">
+                    <h3 class="widget-title">{% trans "Recent Properties" %}</h3>
+                    <div class="widget-content">
+                        <div class="small-property-list">
+                            <div class="small-property clearfix">
+                                <div class="property-small-picture col-sm-12 col-md-4">
+                                    <a href="">
+                                        <img src="http://placehold.it/500x500" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="property-small-content col-sm-12 col-md-8">
+                                    <h4><a href="">St Johns Pl</a></h4>
+                                    <p><span>$ 1,800</span> / per month</p>
+                                </div>
+                            </div><!-- Small Property Ends -->
+                            <div class="small-property clearfix">
+                                <div class="property-small-picture col-sm-12 col-md-4">
+                                    <a href="">
+                                        <img src="http://placehold.it/500x500" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="property-small-content col-sm-12 col-md-8">
+                                    <h4><a href="">South St</a></h4>
+                                    <p><span>$ 1,800</span> / per month</p>
+                                </div>
+                            </div><!-- Small Property Ends -->
+                            <div class="small-property clearfix">
+                                <div class="property-small-picture col-sm-12 col-md-4">
+                                    <a href="">
+                                        <img src="http://placehold.it/500x500" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="property-small-content col-sm-12 col-md-8">
+                                    <h4><a href="">Five Ave</a></h4>
+                                    <p><span>$ 1,800</span> / per month</p>
+                                </div>
+                            </div><!-- Small Property Ends -->
+                        </div>
+                    </div><!-- Widget content Ends -->
+                </div><!-- Sidebar Widget Ends -->
+			</aside>
+
+
+
+		</div>
+
+
+
+
+	</div><!-- End container -->
+</section>
+{%  endblock %}
