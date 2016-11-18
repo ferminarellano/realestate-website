@@ -35,11 +35,6 @@ $(function(){
 		  }
 		}
 	  });
-
-    function mailchimpCallback(resp) {
-        alert("We have sent you a confirmation email!");
-    }
-	
 	
 });
 $(window).load(function() { // makes sure the whole site is loaded

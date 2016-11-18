@@ -7,7 +7,8 @@ from stdimage.models import StdImageField
 class SiteConfiguration(SingletonModel):
     sitename = models.CharField(verbose_name=_("Site name"), max_length=255, default="Site Name")
     site_url = models.CharField(verbose_name=_("Site URL"), max_length=255)
-    telephone = models.CharField(verbose_name=_("Telephone"), max_length=255)
+    telephone = models.CharField(verbose_name=_("Mobile"), max_length=255)
+    telephone2 = models.CharField(verbose_name=_("Landline"), max_length=255)
     email = models.EmailField(verbose_name=_("Email"))
     address1 = models.CharField(verbose_name=_("Address Line 1"), max_length=255)
     address2 = models.CharField(verbose_name=_("Address Line 2"), max_length=255)
