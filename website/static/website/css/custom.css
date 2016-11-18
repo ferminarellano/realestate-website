@@ -32,6 +32,10 @@
     height:85px;
 }
 
+.banner-gallery{
+    height: 450px;
+}
+
 .item-gallery{
     min-height: 450px;
     background-repeat: no-repeat;
@@ -77,4 +81,20 @@
     .item-gallery{
         min-height: 350px;
     }
+
+    .banner-gallery{
+        height: 350px;
+    }
+}
+
+.unslider-nav ol {
+
+}
+
+.unslider-nav ol li {
+    border-color: black;
+}
+
+.unslider-nav ol li.unslider-active {
+
 }
