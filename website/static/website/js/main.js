@@ -35,11 +35,6 @@ $(function(){
 		  }
 		}
 	  });
-	
-	$('#mc-form').ajaxChimp({
-        callback: mailchimpCallback,
-        url: "http://blahblah.us13.list-manage.com/subscribe/post?u=1dc1b222717db8f0b81b0ed9c&id=5c4f4f89aa"
-    });
 
     function mailchimpCallback(resp) {
         alert("We have sent you a confirmation email!");
