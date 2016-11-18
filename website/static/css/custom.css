@@ -2,3 +2,21 @@
     text-align: right;
     margin-right: 10px;
 }
+
+.item-gallery{
+    min-height: 450px;
+    background-repeat: no-repeat;
+}
+
+.caption-title{
+    font-size: 1.8em;
+    background-color: #00A2F4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.caption-description{
+    1em;
+    line-height: 1.15em;
+    color: #555;
+    background-color: #e5e5e5;
+}

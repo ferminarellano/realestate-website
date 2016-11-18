@@ -1,3 +1,7 @@
+.latest-property p{
+    font-size: 18px;
+}
+
 .pic-address .property-price{
     text-align: right;
     margin: 0 10px 0 0;
@@ -26,4 +30,51 @@
 .logo img{
     width:auto;
     height:85px;
+}
+
+.item-gallery{
+    min-height: 450px;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+.item-gallery .container.gallery{
+    position: relative;
+}
+
+.caption-gallery{
+    position: absolute;
+    bottom: 50px;
+    max-width: 50%;
+}
+
+.caption-title{
+    font-size: 1.8em;
+    background-color: #4CB050;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.caption-description{
+    1em;
+    line-height: 1.15em;
+    color: #555;
+    background-color: #e5e5e5;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width: 768px){
+    .container.gallery {
+        width: 100%;
+    }
+
+    .item-gallery{
+        min-height: 350px;
+    }
 }

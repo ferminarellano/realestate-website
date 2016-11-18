@@ -4,12 +4,36 @@
 {% load i18n %}
 
 {% block content %}
+
+<section class="intro-gallery">
+	<div class="container-fluid padding-fix">
+		<div class="banner-gallery">
+			<ul>
+			{% for item in banner_items %}
+				<li>
+				<div class="item-gallery" style="background-image: url({{ item.picture.large.url }}); background-position-y: {{ item.offset }}px;">
+					<!--<img class="pic-gallery" src="">-->
+					<div class="container gallery">
+						<div class="caption-gallery">
+							<div class="caption-title"><span>{{ item.caption_title }}</span></div>
+							<div class="caption-description"><span>{{ item.caption_description }}</span></div>
+						</div>
+					</div>
+
+				</div>
+				</li>
+			{% endfor %}
+		</ul>
+		</div>
+	</div>
+</section>
+
 <section class="latest-property">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="property">
-					<h1 class="section-heading wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0s; animation-name: fadeInUp;">{% trans "Latest" %} <span>{% trans "Properties" %}</span></h1>
+					<h1 class="section-heading wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0s; animation-name: fadeInUp;">{% trans "Amazing" %} <span>{% trans "Properties" %}</span></h1>
 					<p class="section-desc wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0s; animation-name: fadeInUp;">{% trans "Here you can find our exclusive listing of nature rich properties in Honduras" %}</p>
 				</div>
 			</div><!-- end .col-md-12 -->
@@ -21,7 +45,7 @@
     <div class="container">
         <div class="row">
             {% for property in properties %}
-                <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
+                <div class="col-md-4 col-sm-6 wows fadeInUp" data-wow-duration="1.0s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
                     <div class="latest-pic1" style="background-image: url({{ property.picture.medium.url }});">
                     </div><!-- end .latest-pic -->
                     <div class="latest-pic-bottom">
@@ -63,4 +87,19 @@
     </div><!-- end .container -->
 </section>
 
+{% endblock %}
+
+{% block custom_js %}
+	<script>
+		jQuery(document).ready(function($) {
+			$('.banner-gallery').unslider({
+				animation: 'horizontal',
+				autoplay: true,
+				speed: 1250,
+				delay: 7000,
+				nav: false,
+				arrows: false
+			});
+		});
+	</script>
 {% endblock %}

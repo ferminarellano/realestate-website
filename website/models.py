@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from solo.models import SingletonModel
+from stdimage.models import StdImageField
 
 class SiteConfiguration(SingletonModel):
     sitename = models.CharField(verbose_name=_("Site name"), max_length=255, default="Site Name")
@@ -49,3 +50,20 @@ class SocialProfile(models.Model):
     class Meta:
         verbose_name = _("Social Profile")
         verbose_name_plural = _("Social Profiles")
+
+class IntroBanner(models.Model):
+    picture = StdImageField(upload_to="banner", blank=True, variations={
+        'large': (1900, 800, True),
+    }, verbose_name=_("Picture"))
+    caption_title = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Caption Title"))
+    caption_description = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Caption Description"))
+    position = models.PositiveIntegerField(verbose_name=_("Position"), unique=True)
+    offset = models.IntegerField(verbose_name=_("Offset"), blank=True, null=True)
+    active = models.BooleanField(verbose_name=_("Active"), default = True)
+
+    def __unicode__(self):
+        return unicode(_("Banner Item"))
+
+    class Meta:
+        verbose_name = _("Banner Item")
+        verbose_name_plural = _("Banner Items")

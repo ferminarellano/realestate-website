@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-15 12:44-0600\n"
+"POT-Creation-Date: 2016-11-18 01:50-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,100 +22,124 @@ msgstr ""
 msgid "Website"
 msgstr "Sitio Web"
 
-#: models.py:7
+#: models.py:8
 msgid "Site name"
 msgstr "Nombre del sitio"
 
-#: models.py:8
+#: models.py:9
 msgid "Site URL"
 msgstr "URL del sitio"
 
-#: models.py:9
+#: models.py:10
 msgid "Telephone"
 msgstr "Teléfono"
 
-#: models.py:10
+#: models.py:11
 msgid "Email"
 msgstr "Correo"
 
-#: models.py:11
+#: models.py:12
 msgid "Address Line 1"
 msgstr "Direccion Línea 1"
 
-#: models.py:12
+#: models.py:13
 msgid "Address Line 2"
 msgstr "Dirección Línea 2"
 
-#: models.py:13 templates/website/about.html:17
+#: models.py:14 templates/website/about.html:17
 msgid "About"
 msgstr "Acerca de"
 
-#: models.py:16 models.py:19
+#: models.py:17 models.py:20
 msgid "Site Configuration"
 msgstr "Configuración del Sitio"
 
-#: models.py:22
+#: models.py:23
 msgid "Name"
 msgstr "Nombre"
 
-#: models.py:23
+#: models.py:24
 msgid "URL"
 msgstr "URL"
 
-#: models.py:24 models.py:43
+#: models.py:25 models.py:44 models.py:60
 msgid "Position"
 msgstr "Posición"
 
-#: models.py:25 models.py:44
+#: models.py:26 models.py:45 models.py:62
 msgid "Active"
 msgstr "Activo"
 
-#: models.py:28 models.py:31
+#: models.py:29 models.py:32
 msgid "Menu Item"
 msgstr "Item del Menu"
 
-#: models.py:32
+#: models.py:33
 msgid "Menu items"
 msgstr "Items del Menu"
 
-#: models.py:41 models.py:47 models.py:50
+#: models.py:42 models.py:48 models.py:51
 msgid "Social Profile"
 msgstr "Perfil Social"
 
-#: models.py:42
+#: models.py:43
 msgid "Social Profile URL"
 msgstr "Dirección de Perfil Social"
 
-#: models.py:51
+#: models.py:52
 msgid "Social Profiles"
 msgstr "Perfiles Sociales"
+
+#: models.py:57
+msgid "Picture"
+msgstr "Fotografía"
+
+#: models.py:58
+msgid "Caption Title"
+msgstr "Titulo de Leyenda"
+
+#: models.py:59
+msgid "Caption Description"
+msgstr "Descripción de Leyenda"
+
+#: models.py:61
+msgid "Offset"
+msgstr "Desplazamiento"
+
+#: models.py:65 models.py:68
+msgid "Banner Item"
+msgstr "Item del Banner"
+
+#: models.py:69
+msgid "Banner Items"
+msgstr "Items de Banner"
 
 #: templates/website/about.html:12
 msgid "About Nature Rich Properties"
 msgstr "Acerca de Nature Rich Properties"
 
-#: templates/website/about.html:16 templates/website/base.html:106
+#: templates/website/about.html:16 templates/website/base.html:108
 #: templates/website/contact.html:18 templates/website/howto.html:16
 msgid "Home"
 msgstr "Inicio"
 
-#: templates/website/base.html:178
+#: templates/website/base.html:180
 msgid "About us"
 msgstr "Acerca de"
 
-#: templates/website/base.html:191
+#: templates/website/base.html:193
 msgid "Latest Tweets"
 msgstr "Últimos tweets"
 
-#: templates/website/base.html:201
+#: templates/website/base.html:203
 msgid "Your Blog"
 msgstr "Tu blog"
 
-#: templates/website/base.html:207
+#: templates/website/base.html:209
 msgid "Contact Info"
 msgstr "Información de Contacto"
 
-#: templates/website/base.html:239
+#: templates/website/base.html:241
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
@@ -179,20 +203,23 @@ msgstr "Guía Tutorial"
 msgid "How-To"
 msgstr "Como Comprar"
 
-#: templates/website/index.html:12
-msgid "Latest"
-msgstr "Últimas"
+#: templates/website/index.html:36
+msgid "Amazing"
+msgstr "Asombrosas"
 
-#: templates/website/index.html:12
+#: templates/website/index.html:36
 msgid "Properties"
 msgstr "Propiedades"
 
-#: templates/website/index.html:13
+#: templates/website/index.html:37
 msgid ""
 "Here you can find our exclusive listing of nature rich properties in Honduras"
 msgstr ""
 "Aquí puedes encontrar nuestro exclusivo listado de propiedades ricas en "
 "naturaleza en Honduras"
+
+#~ msgid "Latest"
+#~ msgstr "Últimas"
 
 #~ msgid "Menu Configuration"
 #~ msgstr "Configuración del Menu"
