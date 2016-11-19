@@ -46,7 +46,7 @@
         <div class="row">
             {% for property in properties %}
                 <div class="col-md-4 col-sm-6 wows fadeInUp" data-wow-duration="1.0s" data-wow-delay="0.1s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.5s; animation-name: fadeInUp;">
-                    <div class="latest-pic1" style="background-image: url({{ property.picture.medium.url }});">
+                    <div class="latest-pic1" style="background-image: url({{ property.get_feature_picture.picture.medium.url }});">
                     </div><!-- end .latest-pic -->
                     <div class="latest-pic-bottom">
                         <div class="pic-address">

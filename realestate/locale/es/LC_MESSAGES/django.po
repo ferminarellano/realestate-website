@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-15 10:05-0600\n"
+"POT-Creation-Date: 2016-11-19 00:23-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,54 +18,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: admin.py:21
+msgid "There can only be one featured picture in a property"
+msgstr "Solo puede haber una fotografía destacada en una propiedad."
+
 #: apps.py:8
 msgid "Real Estate"
 msgstr "Bienes Raices"
 
-#: models.py:7 models.py:19
+#: models.py:8
 msgid "Name"
 msgstr "Nombre"
 
-#: models.py:8 templates/realestate/property-detail.html:83
-#: templates/realestate/property-detail.html:87
+#: models.py:9 templates/realestate/property-detail.html:77
+#: templates/realestate/property-detail.html:81
 msgid "Address"
 msgstr "Dirección"
 
-#: models.py:9 templates/realestate/property-detail.html:93
+#: models.py:10 templates/realestate/property-detail.html:87
 msgid "Neighborhood"
 msgstr "Barrio/Colonia/Aldea"
 
-#: models.py:10 templates/realestate/property-detail.html:88
+#: models.py:11 templates/realestate/property-detail.html:82
 msgid "City"
 msgstr "Ciudad"
 
-#: models.py:11 templates/realestate/property-detail.html:99
+#: models.py:12 templates/realestate/property-detail.html:93
 msgid "State"
 msgstr "Departamento"
 
-#: models.py:12 templates/realestate/property-detail.html:100
+#: models.py:13 templates/realestate/property-detail.html:94
 msgid "Country"
 msgstr "País"
 
-#: models.py:13 templates/realestate/property-detail.html:77
+#: models.py:14 templates/realestate/property-detail.html:71
 msgid "Description"
 msgstr "Descripción"
 
-#: models.py:14
+#: models.py:15
 msgid "Price"
 msgstr "Precio"
 
-#: models.py:20
+#: models.py:16
 msgid "Active"
 msgstr "Activo"
 
-#: models.py:23 models.py:26
+#: models.py:23 models.py:26 models.py:36
 msgid "Property"
 msgstr "Propiedad"
 
 #: models.py:27
 msgid "Properties"
 msgstr "Propiedades"
+
+#: models.py:35
+msgid "Picture"
+msgstr "Fotografía"
+
+#: models.py:37
+msgid "Featured"
+msgstr "Destacada"
+
+#: models.py:40 models.py:43
+msgid "Property Picture"
+msgstr "Fotografía de Propiedad"
+
+#: models.py:44
+msgid "Property Pictures"
+msgstr "Fotografias de Propiedad"
 
 #: templates/realestate/property-detail.html:17
 msgid "Home"
@@ -75,34 +95,34 @@ msgstr "Inicio"
 msgid "For Sale"
 msgstr "En Venta"
 
-#: templates/realestate/property-detail.html:155
+#: templates/realestate/property-detail.html:149
 msgid "Contact Info"
 msgstr "Información de Contacto"
 
-#: templates/realestate/property-detail.html:174
+#: templates/realestate/property-detail.html:168
 msgid "Inquire about this property"
 msgstr "Solicita información de esta propiedad"
 
-#: templates/realestate/property-detail.html:179
+#: templates/realestate/property-detail.html:173
 msgid "Your Name"
 msgstr "Tu Nombre"
 
-#: templates/realestate/property-detail.html:182
+#: templates/realestate/property-detail.html:176
 msgid "Phone"
 msgstr "Teléfono"
 
-#: templates/realestate/property-detail.html:185
+#: templates/realestate/property-detail.html:179
 msgid "Email"
 msgstr "Correo Electrónico"
 
-#: templates/realestate/property-detail.html:188
+#: templates/realestate/property-detail.html:182
 msgid "Hello, I am interested in [Single Family Home]..."
 msgstr "Hola, estoy interesado en [una casa de habitacion]..."
 
-#: templates/realestate/property-detail.html:190
+#: templates/realestate/property-detail.html:184
 msgid "Request Info"
 msgstr "Solicitar Informacion"
 
-#: templates/realestate/property-detail.html:199
+#: templates/realestate/property-detail.html:193
 msgid "Recent Properties"
 msgstr "Propiedades Recientes"

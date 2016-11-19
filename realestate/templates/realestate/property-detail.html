@@ -40,34 +40,28 @@
 
 			<div class="col-sm-12">
 				<div class="property-gallery">
-					<img src="{{ property.picture.large.url }}" alt="">
-                    {% comment %}
-					<div class="property-agent">
-						<div class="agent-media clearfix">
-							<img src="http://placehold.it/150x150" alt="" class="pull-left">
-							<ul>
-							    <li>Contact Agent</li>
-							    <li><i class="fa fa-user"></i> Brittany Watkins</li>
-							    <li><i class="fa fa-phone"></i> 321 456 9874</li>
-							    <li><a href="#">View My Listings</a></li>
-							</ul>
-						</div>
-						<form action="#">
-							<input type="text" placeholder="Your Name">
-							<input type="text" placeholder="Phone">
-							<input type="email" placeholder="Email">
-							<textarea placeholder="Hello, I am interested in [Sigle Family Home]..."></textarea>
-							<input type="submit" value="Request Info">
-						</form>
-					</div>
-					<div class="property-share">
-					    <ul class="list-unstyled">
-					        <li><a href=""><i class="fa fa-share-alt"></i></a></li>
-					        <li><a href=""><i class="fa fa-heart"></i></a></li>
-					        <li><a href=""><i class="fa fa-print"></i></a></li>
-					    </ul>
-					</div>
-                    {% endcomment %}
+                    <ul>
+                        {% for picture in property.pictures.all %}
+                            <li>
+                                <img class="property-picture large" src="{{ picture.picture.large.url }}" alt="Beach House in Granadita">
+                                <img class="property-picture medium" src="{{ picture.picture.medium.url }}" alt="Beach House in Granadita">
+                                <img class="property-picture small" src="{{ picture.picture.small.url }}" alt="Beach House in Granadita">
+
+                                {% comment %}
+                                <div class="item-gallery" style="background-image: url({{ item.picture.large.url }}); background-position-y: {{ item.offset }}px;">
+
+                					<div class="container gallery">
+                						<div class="caption-gallery">
+                							<div class="caption-title"><span>{{ item.caption_title }}</span></div>
+                							<div class="caption-description"><span>{{ item.caption_description }}</span></div>
+                						</div>
+                					</div>
+
+                				</div>
+                                {% endcomment %}
+                            </li>
+                        {% endfor %}
+                    </ul>
 				</div>
 			</div>
 
@@ -191,44 +185,26 @@
                 </div><!-- End Property Contact Info -->
 			</div><!-- End property details -->
 
-			<aside class="col-sm-3">
+			<aside class="col-sm-3 hidden-xs">
 			    <div class="sidebar-widget">
                     <h3 class="widget-title">{% trans "Recent Properties" %}</h3>
                     <div class="widget-content">
                         <div class="small-property-list">
-                            <div class="small-property clearfix">
-                                <div class="property-small-picture col-sm-12 col-md-4">
-                                    <a href="">
-                                        <img src="http://placehold.it/500x500" alt="" class="img-responsive">
-                                    </a>
-                                </div>
-                                <div class="property-small-content col-sm-12 col-md-8">
-                                    <h4><a href="">St Johns Pl</a></h4>
-                                    <p><span>$ 1,800</span> / per month</p>
-                                </div>
-                            </div><!-- Small Property Ends -->
-                            <div class="small-property clearfix">
-                                <div class="property-small-picture col-sm-12 col-md-4">
-                                    <a href="">
-                                        <img src="http://placehold.it/500x500" alt="" class="img-responsive">
-                                    </a>
-                                </div>
-                                <div class="property-small-content col-sm-12 col-md-8">
-                                    <h4><a href="">South St</a></h4>
-                                    <p><span>$ 1,800</span> / per month</p>
-                                </div>
-                            </div><!-- Small Property Ends -->
-                            <div class="small-property clearfix">
-                                <div class="property-small-picture col-sm-12 col-md-4">
-                                    <a href="">
-                                        <img src="http://placehold.it/500x500" alt="" class="img-responsive">
-                                    </a>
-                                </div>
-                                <div class="property-small-content col-sm-12 col-md-8">
-                                    <h4><a href="">Five Ave</a></h4>
-                                    <p><span>$ 1,800</span> / per month</p>
-                                </div>
-                            </div><!-- Small Property Ends -->
+                            {% for property in recent_properties %}
+                                <div class="small-property clearfix">
+                                    <div class="property-small-picture col-sm-12 col-md-4">
+                                        <a href="/realestate/detail/{{ property.id }}">
+                                            <img src="{{ property.get_feature_picture.picture.thumbnail.url }}" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="property-small-content col-sm-12 col-md-8">
+                                        <h4><a href="">{{ property.name }}</a></h4>
+                                        <p><span>${{ property.price }}</span></p>
+                                    </div>
+                                </div><!-- Small Property Ends -->
+                            {% endfor %}
+
+
                         </div>
                     </div><!-- Widget content Ends -->
                 </div><!-- Sidebar Widget Ends -->
@@ -244,3 +220,22 @@
 	</div><!-- End container -->
 </section>
 {%  endblock %}
+
+{% block custom_js %}
+<script>
+    jQuery(document).ready(function($) {
+        $('.property-gallery').unslider({
+            animation: 'fade',
+            autoplay: true,
+            speed: 1250,
+            delay: 7000,
+            arrows: true,
+            nav: true,
+            arrows: {
+                prev: '<a class="unslider-arrow prev"></a>',
+                next: '<a class="unslider-arrow next"></a>',
+            }
+        });
+    });
+</script>
+{% endblock %}
