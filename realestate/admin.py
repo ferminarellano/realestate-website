@@ -27,6 +27,8 @@ class PropertyPictureInline(admin.TabularInline):
 
 class PropertyAdmin(TranslationAdmin):
     group_fieldsets = True
+    search_fields = ['name', 'neighborhood', 'city', 'state']
+    list_per_page = 10
     list_display = ('name', 'neighborhood', 'city', 'state', 'price', 'active')
     list_editable = ['price', 'active']
     inlines = [
