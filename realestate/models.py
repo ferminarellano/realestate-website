@@ -13,6 +13,9 @@ class Property(models.Model):
     country = models.CharField(max_length=254, blank=True, null=True, verbose_name=_("Country"))
     description = models.TextField(blank=True, null=True, verbose_name=_("Description"))
     price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name=_("Price"))
+    latitude = models.FloatField(verbose_name=_("Latitude"))
+    longitude = models.FloatField(verbose_name=_("Longitude"))
+    map_zoom = models.PositiveIntegerField(verbose_name=_("Map Zoom"), default=16)
     active = models.BooleanField(verbose_name=_("Active"), default = True)
 
     def get_feature_picture(self):

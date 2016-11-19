@@ -70,7 +70,7 @@
                     <h2 class="pd-title">{% trans "Description" %}</h2>
                     <p>{{ property.description }}</p>
 
-                </div><!-- End Property Description -->
+                </div>
 
                 <div class="property-location">
                    <h2 class="pd-title">{% trans "Address" %}</h2>
@@ -94,7 +94,14 @@
                             </ul>
                         </div>
                     </div>
-                </div><!-- End Property Location -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="property-map" class="property-detail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {% comment %}
                 <div class="property-details-list">
                     <h2 class="pd-title">Details</h2>
@@ -199,7 +206,7 @@
                                     </div>
                                     <div class="property-small-content col-sm-12 col-md-8">
                                         <h4><a href="">{{ property.name }}</a></h4>
-                                        <p><span>${{ property.price }}</span></p>
+                                        <p><span>${{ property.price | floatformat:"0" | intcomma }}</span></p>
                                     </div>
                                 </div><!-- Small Property Ends -->
                             {% endfor %}
@@ -209,19 +216,13 @@
                     </div><!-- Widget content Ends -->
                 </div><!-- Sidebar Widget Ends -->
 			</aside>
-
-
-
 		</div>
-
-
-
-
 	</div><!-- End container -->
 </section>
 {%  endblock %}
 
 {% block custom_js %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvtHCa400cbhKREGWie6fOBi8WK13OVPc&amp;extension=.js"></script>
 <script>
     jQuery(document).ready(function($) {
         $('.property-gallery').unslider({
@@ -236,6 +237,95 @@
                 next: '<a class="unslider-arrow next"></a>',
             }
         });
+    });
+
+    $(function () {
+
+        function initMap() {
+
+            var location = new google.maps.LatLng({{ property.latitude }}, {{ property.longitude }});
+
+            var mapCanvas = document.getElementById('property-map');
+            var mapOptions = {
+                center: location,
+                zoom: {{ property.map_zoom }},
+                panControl: false,
+                scrollwheel: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+
+            var markerImage = '{% static "website/images/map-marker.png" %}';
+
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                icon: markerImage
+            });
+
+            var styles = [
+    			{
+    				"featureType": "landscape",
+    				"elementType": "all",
+    				"stylers": [
+    					{
+    						"color": "#f2f2f2"
+    					}
+    				]
+    			},
+    			{
+    				"featureType": "poi",
+    				"elementType": "all",
+    				"stylers": [
+    					{
+    						"visibility": "on"
+    					}
+    				]
+    			},
+    			{
+    				"featureType": "road",
+    				"elementType": "all",
+    				"stylers": [
+    					{
+    						"saturation": -100
+    					},
+    					{
+    						"lightness": 45
+    					}
+    				]
+    			},
+    			{
+    				"featureType": "road.highway",
+    				"elementType": "all",
+    				"stylers": [
+    					{
+    						"visibility": "simplified"
+    					}
+    				]
+    			},
+    			{
+    				"featureType": "road.arterial",
+    				"elementType": "labels.icon",
+    				"stylers": [
+    					{
+    						"visibility": "off"
+    					}
+    				]
+    			},
+    			{
+    				"featureType": "transit",
+    				"elementType": "all",
+    				"stylers": [
+    					{
+    						"visibility": "off"
+    					}
+    				]
+    			}
+    		];
+
+            map.set('styles', styles);
+        }
+        google.maps.event.addDomListener(window, 'load', initMap);
     });
 </script>
 {% endblock %}
