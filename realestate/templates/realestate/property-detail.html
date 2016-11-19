@@ -2,6 +2,7 @@
 {% load admin_static %}
 {% load humanize %}
 {% load i18n %}
+{% load l10n %}
 
 {% block content %}
 
@@ -243,7 +244,7 @@
 
         function initMap() {
 
-            var location = new google.maps.LatLng({{ property.latitude }}, {{ property.longitude }});
+            var location = new google.maps.LatLng({{ property.latitude | unlocalize }}, {{ property.longitude | unlocalize }});
 
             var mapCanvas = document.getElementById('property-map');
             var mapOptions = {
