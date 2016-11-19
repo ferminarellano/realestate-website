@@ -56,3 +56,6 @@ def contact(request):
 		'social_profiles': social_profiles,
 	})
 	return HttpResponse(template.render(context))
+
+def search_console_verification(request):
+	return HttpResponse("google-site-verification: google66362829d50a6da0.html")
