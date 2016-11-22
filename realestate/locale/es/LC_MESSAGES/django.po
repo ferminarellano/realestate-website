@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-22 10:46-0600\n"
+"POT-Creation-Date: 2016-11-22 12:57-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,26 +115,62 @@ msgstr "Información de Contacto"
 msgid "Inquire about this property"
 msgstr "Solicita información de esta propiedad"
 
-#: templates/realestate/property-detail.html:181
+#: templates/realestate/property-detail.html:183
+#: templates/realestate/property-detail.html:372
+msgid "Success"
+msgstr "Exito"
+
+#: templates/realestate/property-detail.html:195
 msgid "Your Name"
 msgstr "Tu Nombre"
 
-#: templates/realestate/property-detail.html:184
+#: templates/realestate/property-detail.html:198
 msgid "Phone"
 msgstr "Teléfono"
 
-#: templates/realestate/property-detail.html:187
+#: templates/realestate/property-detail.html:201
 msgid "Email"
 msgstr "Correo Electrónico"
 
-#: templates/realestate/property-detail.html:190
+#: templates/realestate/property-detail.html:204
 msgid "Hello, I am interested in [Single Family Home]..."
 msgstr "Hola, estoy interesado en [una casa de habitacion]..."
 
-#: templates/realestate/property-detail.html:192
+#: templates/realestate/property-detail.html:206
+#: templates/realestate/property-detail.html:393
 msgid "Request Info"
 msgstr "Solicitar Informacion"
 
-#: templates/realestate/property-detail.html:201
+#: templates/realestate/property-detail.html:215
 msgid "Recent Properties"
 msgstr "Propiedades Recientes"
+
+#: templates/realestate/property-detail.html:382
+msgid "Sending Message, Please Wait"
+msgstr "Enviando mensaje, Porfavor espere"
+
+#: views.py:45
+msgid "Please enter a valid name."
+msgstr "Porfavor ingrese un nombre válido."
+
+#: views.py:53 views.py:63
+msgid "Please enter a valid email."
+msgstr "Porfavor ingrese un correo electrónico válido."
+
+#: views.py:71
+msgid "Please enter a valid phone."
+msgstr "Porfavor ingrese un número de telefono válido."
+
+#: views.py:79
+msgid "Please enter a valid message."
+msgstr "Porfavor ingrese un mensaje válido."
+
+#: views.py:119 views.py:126
+msgid ""
+"We encountered some problems trying to send your message. Please write us "
+"directly to: naturerichproperties@gmail.com"
+msgstr "Nos encontramos con un problema al intentar envíar su mensaje. Porfavor escribenos directamente a: naturerichproperties@gmail.com"
+
+#: views.py:134 views.py:143
+msgid "Your message was sent, we will contact you soon."
+msgstr "Tu mensaje fue enviado, le contactaremos muy pronto."

@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <form id="contactForm" action="/contact/" method="post" name="contactform" id="contactform" class="clearfix">
+                <form id="contactForm" name="contactform" action="/contact/" method="post" class="clearfix">
                     {% csrf_token %}
                     <div class="form-left col-sm-5">
                         <input class="form-control" placeholder="{% trans "Your Name" %}" type="text" name="name" value="{{ name }}">
@@ -150,7 +150,7 @@
         $( "#contactForm" ).submit(function( event ){
             $('#formSubmit').prop('disabled', true);
             $('#formSubmit').css('background', '#727272');
-            $('#formSubmit').text('Sending Message, Please Wait');
+            $('#formSubmit').text("{% trans "Sending Message, Please Wait" %}");
 
             $.ajax({
                 url: '/contact/',
@@ -161,12 +161,9 @@
                     process_response(data);
                     $('#formSubmit').prop('disabled', false);
                     $('#formSubmit').css('background', '#4cb050 none repeat scroll 0 0');
-                    $('#formSubmit').text('Send Message');
+                    $('#formSubmit').text("{% trans "Send Message" %}");
                 },
-                error: function (xhr, ajaxOptions, thrownError){
-                    console.log(thrownError);
-                    console.log(xhr.responseText);
-                }
+                error: function (xhr, ajaxOptions, thrownError){}
             });
 
             event.preventDefault();

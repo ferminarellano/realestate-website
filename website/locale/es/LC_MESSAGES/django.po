@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-22 10:42-0600\n"
+"POT-Creation-Date: 2016-11-22 12:55-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: templates/website/contact.html:77 templates/website/contact.html:143
 msgid "Success"
-msgstr ""
+msgstr "Exito"
 
 #: templates/website/contact.html:87
 msgid "Your Name"
@@ -195,8 +195,14 @@ msgstr "Asunto"
 msgid "Type Your message"
 msgstr "Escribe tu mensaje"
 
-#: templates/website/contact.html:95
+#: templates/website/contact.html:95 templates/website/contact.html:164
 msgid "Send Message"
+msgstr "Enviar mensaje"
+
+#: templates/website/contact.html:153
+#, fuzzy
+#| msgid "Send Message"
+msgid "Sending Message, Please Wait"
 msgstr "Enviar mensaje"
 
 #: templates/website/howto.html:12
@@ -242,7 +248,9 @@ msgstr "Profavor ingrese un mensaje valido."
 msgid ""
 "We encountered some problems trying to send your message. Please write us "
 "directly to: naturerichproperties@gmail.com"
-msgstr "Nos encontramos con algunos problemas enviando su mensaje. Porfavor escribenos directamente a: naturerichproperties@gmail.com"
+msgstr ""
+"Nos encontramos con algunos problemas enviando su mensaje. Porfavor "
+"escribenos directamente a: naturerichproperties@gmail.com"
 
 #: views.py:168 views.py:177
 msgid "Your message was sent, we will contact you soon."

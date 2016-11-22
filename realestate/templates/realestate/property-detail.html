@@ -171,22 +171,36 @@
                     </div>
 
                     <h3>{% trans "Inquire about this property" %}</h3>
-                    <form action="#">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="property-detail message-container {% if messages.count == 0 %}hidden{% endif %}">
+                                {% for message in messages %}
+                                    <div class="alert alert-{% if message.type == "success"%}success{% else %}danger{% endif %} alert-dismissible">
+                                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        <strong>{% if message.type == "success"%}{% trans "Success" %}{% else %}Error{% endif %}!</strong>  {{ message.message }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="contactForm" name="contactform" action="/realestate/detail/{{ property.id }}" method="post">
+                        {% csrf_token %}
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <input type="text" placeholder="{% trans "Your Name" %}">
+                                    <input type="text" name="name" class="form-control" placeholder="{% trans "Your Name" %}" value="{{ name }}">
                                 </div>
                                 <div class="col-sm-4">
-                                    <input type="text" placeholder="{% trans "Phone" %}">
+                                    <input type="text" name="phone" class="form-control" placeholder="{% trans "Phone" %}" value="{{ phone }}">
                                 </div>
                                 <div class="col-sm-4">
-                                    <input type="email" placeholder="{% trans "Email" %}">
+                                    <input type="email" name="email" class="form-control" placeholder="{% trans "Email" %}" value="{{ email }}">
                                 </div>
                                 <div class="col-sm-12">
-                                    <textarea placeholder="{% trans "Hello, I am interested in [Single Family Home]..."%}"></textarea>
+                                    <textarea name="message" class="form-control" placeholder="{% trans "Hello, I am interested in [Single Family Home]..."%}">{{ message }}</textarea>
                                 </div>
-                                <input type="submit" value="{% trans "Request Info" %}">
+                                <input id="formSubmit" type="submit" value="{% trans "Request Info" %}">
                             </div>
                         </div>
                     </form>
@@ -327,6 +341,58 @@
             map.set('styles', styles);
         }
         google.maps.event.addDomListener(window, 'load', initMap);
+    });
+
+    function process_response(data){
+        $(".message-container").html("");
+
+        for(var i = 0; i < data.length; i++){
+            if(data[i].type === "error")
+            {
+                $(".message-container").removeClass("hidden");
+                $(".message-container").append(`
+                    <div class="alert alert-danger alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Error!</strong> ` + data[i].message + `
+                    </div>
+                `);
+            }
+
+            if(data[i].type === "success"){
+                $(".message-container").html("");
+                $(".message-container").removeClass("hidden");
+
+                $('#contactForm').find("input[type=text], input[type=email], textarea").val("");
+                $(".message-container").append(`
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>{% trans "Success" %}!</strong> ` + data[i].message + `
+                    </div>
+                `);
+            }
+        }
+    }
+
+    $( "#contactForm" ).submit(function( event ){
+        $('#formSubmit').prop('disabled', true);
+        $('#formSubmit').css('background', '#727272');
+        $('#formSubmit').text("{% trans "Sending Message, Please Wait" %}");
+
+        $.ajax({
+            url: '/realestate/detail/{{ property.id }}',
+            type: 'post',
+            dataType: 'json',
+            data: $('form#contactForm').serialize(),
+            success: function(data){
+                process_response(data);
+                $('#formSubmit').prop('disabled', false);
+                $('#formSubmit').css('background', '#4cb050 none repeat scroll 0 0');
+                $('#formSubmit').text("{% trans "Request Info" %}");
+            },
+            error: function (xhr, ajaxOptions, thrownError){}
+        });
+
+        event.preventDefault();
     });
 </script>
 {% endblock %}
