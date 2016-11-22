@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-19 00:20-0600\n"
+"POT-Creation-Date: 2016-11-22 10:42-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,28 +122,28 @@ msgstr "Items de Banner"
 msgid "About Nature Rich Properties"
 msgstr "Acerca de Nature Rich Properties"
 
-#: templates/website/about.html:16 templates/website/base.html:108
+#: templates/website/about.html:16 templates/website/base.html:116
 #: templates/website/contact.html:18 templates/website/howto.html:16
 msgid "Home"
 msgstr "Inicio"
 
-#: templates/website/base.html:180
+#: templates/website/base.html:188
 msgid "About us"
 msgstr "Acerca de"
 
-#: templates/website/base.html:193
+#: templates/website/base.html:201
 msgid "Latest Tweets"
 msgstr "Últimos tweets"
 
-#: templates/website/base.html:203
+#: templates/website/base.html:211
 msgid "Your Blog"
 msgstr "Tu blog"
 
-#: templates/website/base.html:209
+#: templates/website/base.html:217
 msgid "Contact Info"
 msgstr "Información de Contacto"
 
-#: templates/website/base.html:241
+#: templates/website/base.html:249
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
@@ -175,23 +175,27 @@ msgstr ""
 "Si tienes alguna pregunta o comentarios, o solamente quisieras saludar, solo "
 "envía un mensaje a nuestro asombroso equipo"
 
-#: templates/website/contact.html:73
+#: templates/website/contact.html:77 templates/website/contact.html:143
+msgid "Success"
+msgstr ""
+
+#: templates/website/contact.html:87
 msgid "Your Name"
 msgstr "Tú Nombre"
 
-#: templates/website/contact.html:74
+#: templates/website/contact.html:88
 msgid "Your Email"
 msgstr "Tú Correo"
 
-#: templates/website/contact.html:75
+#: templates/website/contact.html:89
 msgid "Subject"
 msgstr "Asunto"
 
-#: templates/website/contact.html:78
+#: templates/website/contact.html:92
 msgid "Type Your message"
 msgstr "Escribe tu mensaje"
 
-#: templates/website/contact.html:81
+#: templates/website/contact.html:95
 msgid "Send Message"
 msgstr "Enviar mensaje"
 
@@ -217,6 +221,32 @@ msgid ""
 msgstr ""
 "Aquí puedes encontrar nuestro exclusivo listado de propiedades ricas en "
 "naturaleza en Honduras"
+
+#: views.py:80
+msgid "Please enter a valid name."
+msgstr "Por favor ingrese un nombre válido."
+
+#: views.py:88 views.py:98
+msgid "Please enter a valid email."
+msgstr "Porfavor ingrese un correo electrónico válido."
+
+#: views.py:106
+msgid "Please enter a valid subject."
+msgstr "Porfavor ingrese un asunto válido."
+
+#: views.py:114
+msgid "Please enter a valid message."
+msgstr "Profavor ingrese un mensaje valido."
+
+#: views.py:153 views.py:160
+msgid ""
+"We encountered some problems trying to send your message. Please write us "
+"directly to: naturerichproperties@gmail.com"
+msgstr "Nos encontramos con algunos problemas enviando su mensaje. Porfavor escribenos directamente a: naturerichproperties@gmail.com"
+
+#: views.py:168 views.py:177
+msgid "Your message was sent, we will contact you soon."
+msgstr "Tu mensaje fue enviado, te contactaremos pronto."
 
 #~ msgid "Telephone"
 #~ msgstr "Teléfono"
