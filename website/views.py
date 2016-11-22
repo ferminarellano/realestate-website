@@ -7,6 +7,7 @@ from django.template import RequestContext, loader
 from django.utils.translation import ugettext_lazy as _
 import json
 from django.core.mail import send_mail
+from smtplib import SMTPException
 
 from .models import MenuItem, SocialProfile, IntroBanner
 from realestate.models import Property
@@ -114,14 +115,51 @@ def contact(request):
 				"fields" : fields
 			})
 
-		complete_message = 'Formulario de Contact\nEnviado por: ' + name + '\nCorreo: '+ email + '\nAsunto: '+ subject + '\nMensaje: ' + message
-		mail_sent = send_mail(
-		    subject,
-		    complete_message,
-		    'naturerichproperties@gmail.com',
-		    ['ferminarellano.hn@gmail.com'],
-		    fail_silently=False,
-		)
+		if len(errors) == 0:
+			complete_message = 'Formulario de Contacto\nEnviado por: ' + name + '\nCorreo: '+ email + '\nAsunto: '+ subject + '\nMensaje: ' + message
+			html = """
+				<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+					<html xmlns="http://www.w3.org/1999/xhtml">
+					    <head>
+					        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+					        <title>""" + subject + """</title>
+					        <style type="text/css">
+					        body {margin: 0; padding: 0; min-width: 100%!important;}
+					        .content {width: 100%; max-width: 600px;}
+					        </style>
+					    </head>
+					    <body yahoo bgcolor="#f6f8f1">
+							<div style="margin-bottom:10px;"><p>Hola, tienes un nuevo mensaje:</p></div>
+							<div><b>Enviado por:</b> """ + name + """</div>
+							<div><b>Correo:</b> """ + email + """</div>
+							<div><b>Asunto:</b> """ + subject + """</div>
+							<div><b>Mensaje:</b> """ + message + """</div>
+					    </body>
+					</html>
+			"""
+			try:
+				mail_sent = send_mail(
+				    subject,
+				    complete_message,
+				    'naturerichproperties@gmail.com',
+				    ['ferminarellano.hn@gmail.com'],
+				    fail_silently=False,
+					html_message=html
+				)
+				if mail_sent == 0:
+					errors.append({
+						"type" : "error",
+						"field" : none,
+						"message" : unicode(_("We encountered some problems trying to send your message. Please write us directly to: naturerichproperties@gmail.com")),
+						"fields" : fields
+					})
+			except SMTPException:
+				errors.append({
+					"type" : "error",
+					"field" : none,
+					"message" : unicode(_("We encountered some problems trying to send your message. Please write us directly to: naturerichproperties@gmail.com")),
+					"fields" : fields
+				})
 
 		if request.is_ajax():
 			if len(errors) == 0:

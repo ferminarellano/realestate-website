@@ -92,7 +92,7 @@
                         <textarea class="form-control" name="message" rows="3" placeholder="{% trans "Type Your message" %}">{{ message }}</textarea>
                     </div>
                     <div class="form-button col-sm-12">
-                        <button type="submit" name="submit">{% trans "Send Message" %}</button>
+                        <button id="formSubmit" type="submit" name="submit">{% trans "Send Message" %}</button>
                     </div>
                 </form>
             </div>
@@ -116,6 +116,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvtHCa400cbhKREGWie6fOBi8WK13OVPc&amp;extension=.js"></script>
     <script src="{% static "website/js/google-map.js" %}"></script>
     <script>
+
         function process_response(data){
             $(".message-container").html("");
 
@@ -147,6 +148,10 @@
         }
 
         $( "#contactForm" ).submit(function( event ){
+            $('#formSubmit').prop('disabled', true);
+            $('#formSubmit').css('background', '#727272');
+            $('#formSubmit').text('Sending Message, Please Wait');
+
             $.ajax({
                 url: '/contact/',
                 type: 'post',
@@ -154,6 +159,9 @@
                 data: $('form#contactForm').serialize(),
                 success: function(data){
                     process_response(data);
+                    $('#formSubmit').prop('disabled', false);
+                    $('#formSubmit').css('background', '#4cb050 none repeat scroll 0 0');
+                    $('#formSubmit').text('Send Message');
                 },
                 error: function (xhr, ajaxOptions, thrownError){}
             });
