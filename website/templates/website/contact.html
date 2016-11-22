@@ -163,7 +163,10 @@
                     $('#formSubmit').css('background', '#4cb050 none repeat scroll 0 0');
                     $('#formSubmit').text('Send Message');
                 },
-                error: function (xhr, ajaxOptions, thrownError){}
+                error: function (xhr, ajaxOptions, thrownError){
+                    console.log(thrownError);
+                    console.log(xhr.responseText);
+                }
             });
 
             event.preventDefault();
