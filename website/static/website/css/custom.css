@@ -234,3 +234,7 @@ aside.col-sm-3 {
     margin-top: 10px;
     border: 1px solid #e4e4e4;
 }
+
+.message-container{
+    margin: 0 15px;
+}

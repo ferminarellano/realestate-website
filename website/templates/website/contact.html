@@ -68,14 +68,28 @@
                 <h2>{% trans "Say Hello! Don't be shy" %}.</h2>
                 <p>{% trans "If you have any question or comments, or would just like to say hello, just send us a message to our awesome team" %}.</p>
 
-                <form action="contact.php" method="post" name="contactform" id="contactform" class="clearfix">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="message-container {% if messages.count == 0 %}hidden{% endif %}">
+                            {% for message in messages %}
+                                <div class="alert alert-{% if message.type == "success"%}success{% else %}danger{% endif %} alert-dismissible">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>{% if message.type == "success"%}{% trans "Success" %}{% else %}Error{% endif %}!</strong>  {{ message.message }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contactForm" action="/contact/" method="post" name="contactform" id="contactform" class="clearfix">
+                    {% csrf_token %}
                     <div class="form-left col-sm-5">
-                        <input class="form-control" placeholder="{% trans "Your Name" %}" type="text" name="name">
-                        <input class="form-control" placeholder="{% trans "Your Email" %}" type="email" name="email">
-                        <input class="form-control" placeholder="{% trans "Subject" %}" type="text" name="subject">
+                        <input class="form-control" placeholder="{% trans "Your Name" %}" type="text" name="name" value="{{ name }}">
+                        <input class="form-control" placeholder="{% trans "Your Email" %}" type="email" name="email" value="{{ email }}">
+                        <input class="form-control" placeholder="{% trans "Subject" %}" type="text" name="subject" value="{{ subject }}">
                     </div>
                     <div class="form-right col-sm-7">
-                        <textarea class="form-control" name="message" rows="3" placeholder="{% trans "Type Your message" %}"></textarea>
+                        <textarea class="form-control" name="message" rows="3" placeholder="{% trans "Type Your message" %}">{{ message }}</textarea>
                     </div>
                     <div class="form-button col-sm-12">
                         <button type="submit" name="submit">{% trans "Send Message" %}</button>
@@ -99,6 +113,54 @@
 {% endblock %}
 
 {% block custom_js %}
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvtHCa400cbhKREGWie6fOBi8WK13OVPc&amp;sensor=false&amp;extension=.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvtHCa400cbhKREGWie6fOBi8WK13OVPc&amp;extension=.js"></script>
     <script src="{% static "website/js/google-map.js" %}"></script>
+    <script>
+        function process_response(data){
+            $(".message-container").html("");
+
+            for(var i = 0; i < data.length; i++){
+                if(data[i].type === "error")
+                {
+                    $(".message-container").removeClass("hidden");
+                    $(".message-container").append(`
+                        <div class="alert alert-danger alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Error!</strong> ` + data[i].message + `
+                        </div>
+                    `);
+                }
+
+                if(data[i].type === "success"){
+                    $(".message-container").html("");
+                    $(".message-container").removeClass("hidden");
+
+                    $('#contactForm').find("input[type=text], input[type=email], textarea").val("");
+                    $(".message-container").append(`
+                        <div class="alert alert-success alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>{% trans "Success" %}!</strong> ` + data[i].message + `
+                        </div>
+                    `);
+                }
+            }
+        }
+
+        $( "#contactForm" ).submit(function( event ){
+            $.ajax({
+                url: '/contact/',
+                type: 'post',
+                dataType: 'json',
+                data: $('form#contactForm').serialize(),
+                success: function(data){
+                    process_response(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError){}
+            });
+
+            event.preventDefault();
+        });
+    </script>
+
+
 {% endblock %}

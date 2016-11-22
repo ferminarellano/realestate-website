@@ -4,6 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = False
 ALLOWED_HOSTS = []
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'modeltranslation',
@@ -14,6 +15,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'solo',
     'stdimage',
     'website.apps.WebsiteConfig',
