@@ -142,7 +142,7 @@ def contact(request):
 				    subject,
 				    complete_message,
 				    'naturerichproperties@gmail.com',
-				    ['ferminarellano.hn@gmail.com'],
+				    ['mauricionegociosymas@yahoo.com'],
 				    fail_silently=False,
 					html_message=html
 				)
