@@ -250,3 +250,35 @@ aside.col-sm-3 {
 .contact-box{
     box-shadow: 1px 2px 12px -4px rgba(0, 0, 0, .4);
 }
+
+.property-contact-info form button[type=submit]{
+    background: #4cb050 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 15px;
+    width: auto;
+    margin-top: 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    height: 40px;
+    padding: 0 15px;
+}
+
+.header-banner.contact{
+    background: url(/static/website/images/propiedades.jpg);
+    background-position: 100% 70%;
+    background-size: cover;
+}
+
+.header-banner.howto{
+    background: url(/static/website/images/como-comprar-2.jpg);
+    background-position: 100% 100%;
+    background-size: cover;
+}
+
+.header-banner.about-page{
+    background: url(/static/website/images/arboles.jpg);
+    background-position: 100% 70%;
+    background-size: cover;
+}
