@@ -1,0 +1,27 @@
+{% extends "website/base.html" %}
+{% load admin_static %}
+{% load humanize %}
+{% load i18n %}
+{% load l10n %}
+
+{% block content %}
+
+<section class="header-banner single-property-banner">
+    <div class="banner-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h2>{{ property.name }}</h2>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <ol class="breadcrumb">
+                        <li><a href="">{% trans "Home" %}</a></li>
+                        <li><a class="active">{{ property.name }}</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

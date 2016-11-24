@@ -164,3 +164,18 @@ def detail_view(request, property_id):
 	}
 
     return render(request, template, context)
+
+def list_view(request):
+    menu_items = MenuItem.objects.filter(active=True).order_by('position')
+    social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
+    properties = Property.objects.filter(active=True).order_by('-id')
+
+    template = loader.get_template('realestate/property-list.html')
+
+    context = RequestContext(request, {
+        'menu_items': menu_items,
+        'social_profiles': social_profiles,
+        'properties': properties,
+        'request': request
+    })
+    return HttpResponse(template.render(context))

@@ -24,7 +24,8 @@ def index(request):
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
 		'properties': properties,
-		'banner_items': banner_items
+		'banner_items': banner_items,
+		'request': request
 	})
 	return HttpResponse(template.render(context))
 
@@ -37,6 +38,7 @@ def about(request):
 	context = RequestContext(request, {
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
+		'request': request
 	})
 	return HttpResponse(template.render(context))
 
@@ -49,6 +51,7 @@ def howto(request):
 	context = RequestContext(request, {
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
+		'request': request
 	})
 	return HttpResponse(template.render(context))
 
@@ -195,7 +198,8 @@ def contact(request):
 		'name': name,
 		'email': email,
 		'subject': subject,
-		'message': message
+		'message': message,
+		'request': request
 	}
 
 	return render(request, template, context)
