@@ -9,7 +9,7 @@ import json
 from django.core.mail import send_mail
 from smtplib import SMTPException
 
-from .models import MenuItem, SocialProfile, IntroBanner
+from .models import MenuItem, SocialProfile, IntroBanner, Testimonial
 from realestate.models import Property
 
 def index(request):
@@ -32,12 +32,14 @@ def index(request):
 def about(request):
 	menu_items = MenuItem.objects.filter(active=True).order_by('position')
 	social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
+	testimonials = Testimonial.objects.filter(active=True).order_by('id')
 
 	template = loader.get_template('website/about.html')
 
 	context = RequestContext(request, {
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
+		'testimonials': testimonials,
 		'request': request
 	})
 	return HttpResponse(template.render(context))

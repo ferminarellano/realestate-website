@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-22 12:55-0600\n"
+"POT-Creation-Date: 2016-11-25 00:52-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr "Direccion Línea 1"
 msgid "Address Line 2"
 msgstr "Dirección Línea 2"
 
-#: models.py:15 templates/website/about.html:17
+#: models.py:15 templates/website/about.html:19
 msgid "About"
 msgstr "Acerca de"
 
@@ -58,7 +58,7 @@ msgstr "Acerca de"
 msgid "Site Configuration"
 msgstr "Configuración del Sitio"
 
-#: models.py:24
+#: models.py:24 models.py:73
 msgid "Name"
 msgstr "Nombre"
 
@@ -70,7 +70,7 @@ msgstr "URL"
 msgid "Position"
 msgstr "Posición"
 
-#: models.py:27 models.py:46 models.py:63
+#: models.py:27 models.py:46 models.py:63 models.py:79
 msgid "Active"
 msgstr "Activo"
 
@@ -94,7 +94,7 @@ msgstr "Dirección de Perfil Social"
 msgid "Social Profiles"
 msgstr "Perfiles Sociales"
 
-#: models.py:58
+#: models.py:58 models.py:77
 msgid "Picture"
 msgstr "Fotografía"
 
@@ -118,32 +118,175 @@ msgstr "Item del Banner"
 msgid "Banner Items"
 msgstr "Items de Banner"
 
-#: templates/website/about.html:12
+#: models.py:74
+msgid "Title"
+msgstr "Titulo"
+
+#: models.py:78
+msgid "Testimonial text"
+msgstr "Texto del Testimonio"
+
+#: models.py:82 models.py:85
+msgid "Testimonial"
+msgstr "Testimonio"
+
+#: models.py:86
+msgid "Testimonials"
+msgstr "Testimonios"
+
+#: templates/website/about.html:14 templates/website/about.html:32
 msgid "About Nature Rich Properties"
 msgstr "Acerca de Nature Rich Properties"
 
-#: templates/website/about.html:16 templates/website/base.html:116
+#: templates/website/about.html:18 templates/website/base.html:116
 #: templates/website/contact.html:18 templates/website/howto.html:16
 msgid "Home"
 msgstr "Inicio"
 
-#: templates/website/base.html:188
+#: templates/website/about.html:41
+msgid "OUR MOTTO"
+msgstr "NUESTRO LEMA"
+
+#: templates/website/about.html:44
+msgid "Honesty"
+msgstr "Honestidad"
+
+#: templates/website/about.html:47
+msgid "Speed"
+msgstr "Rapidez"
+
+#: templates/website/about.html:50
+msgid "Financing"
+msgstr "Financiamiento"
+
+#: templates/website/about.html:60 templates/website/about.html:61
+msgid "Who We Are"
+msgstr "Quienes Somos"
+
+#: templates/website/about.html:60
+msgid "What We Do"
+msgstr "Que Hacemos"
+
+#: templates/website/about.html:62
+msgid ""
+"We are a real estate company with 15 years of experience with a large "
+"portfolio of satisfied customers from the United States, Canada and Cayman "
+"Islands. "
+msgstr "Somos una compañia de bienes raices con 15 años de experiencia con una gran cartera de clientes satisfechos de los Estados Unidos, Canada e Islas Cayman."
+
+#: templates/website/about.html:63
+msgid ""
+"Our sales offer includes: &bull; Retirement and Vacation Houses and Villas "
+"&bull; Lots for Urban, Resort and Residential Developments &bull; All of our "
+"properties are located within safe, touristic natural areas in the "
+"departments of Atlantida, Bay Islands and Colon."
+msgstr "Nuesta oferta de venta incluye: &bull; Casas Habitacionales y Villas para retiro y vacaciones &bull; Propiedades para Desarrollos Urbanos, Hoteleros y Residenciales &bull; Todas nuestras propiedades están ubicadas en areas naturales turísticas y seguras en los departamentos de Atlántida, Islas de la Bahía y Colón."
+
+#: templates/website/about.html:64
+msgid "View our listing"
+msgstr "Ver propiedades"
+
+#: templates/website/about.html:76
+msgid "Features of our Nature Rich Properties"
+msgstr "Características de nuestras Propiedades"
+
+#: templates/website/about.html:77
+msgid ""
+"We focus on properties in natural areas with immediate access to mountains, "
+"rivers and beaches, surrounded by amazing sceneries and views. "
+msgstr "Nos enfocamos en propiedades en areas naturales con acceso inmediato a montañas, rios y playas, rodeadas de asombrosos paisajes y vistas."
+
+#: templates/website/about.html:85
+msgid "SAFE COMMUNITIES"
+msgstr "COMUNIDADES SEGURAS"
+
+#: templates/website/about.html:86
+msgid ""
+"All of our properties are located within the safest communities, 20 minutes "
+"away from the bustling city."
+msgstr "Todas nuestras propiedades están ubicadas en las comunidades más seguras a 20 minutos de la bullisiosa ciudad."
+
+#: templates/website/about.html:96
+msgid "IN GREEN AREAS"
+msgstr "EN AREAS NATURALES"
+
+#: templates/website/about.html:97
+msgid ""
+"Surrounded by amazing sceneries and breathtaking views. Beachfront, "
+"Riverside, Oceanview, you name it!"
+msgstr "Rodeadas de asombrosos paisajes y vistas impresionantes. De mar, de río, con vista al océano, ¡tú decides!"
+
+#: templates/website/about.html:107
+msgid "FINANCING AVAILABLE"
+msgstr "FINANCIAMIENTO"
+
+#: templates/website/about.html:108
+msgid "Apply with one of our long trusted local banks. "
+msgstr "Aplica a financiamiento con uno de nuestro bancos locales de confianza."
+
+#: templates/website/about.html:120
+msgid "TOURIST ATTRACTIONS"
+msgstr "ATRACCIONES TURISTICAS"
+
+#: templates/website/about.html:121
+msgid ""
+"From rafting and canopy to hot springs and bird watching, our surroundings "
+"offer outdoor activities for all ages."
+msgstr "Desde rafting y canopy, hasta aguas termales y avistamiento de aves, nuestros alrededores ofrecen actividades para todas las edades."
+
+#: templates/website/about.html:131
+msgid "HASSLE FREE PROCESS"
+msgstr "PROCESO SIN MOLESTIAS"
+
+#: templates/website/about.html:132
+msgid ""
+"Our legal advisors portfolio will make all the legal process as smooth as a "
+"warm carribbean breeze."
+msgstr "Nuestra cartera de asesores legales harán el proceso tan suave como una cálida brisa marina."
+
+#: templates/website/about.html:142
+msgid "PERSONALIZED SERVICE"
+msgstr "SERVICIO PERSONALIZADO"
+
+#: templates/website/about.html:143
+msgid ""
+"Most of our listing is owned by us, so we will be closing deals personally "
+"and in no time."
+msgstr "La mayoría de propiedades en catálogo son nuestras, así que cerraremos los tratos personalmente y de inmediato."
+
+#: templates/website/about.html:157
+msgid "Do you want to sell your property"
+msgstr "Deseas vender tu propiedad"
+
+#: templates/website/about.html:158
+msgid "Call us and list your property here"
+msgstr "Llamános y vende tus propiedades con nosotros"
+
+#: templates/website/about.html:162
+msgid "Just Contact us"
+msgstr "Contáctanos"
+
+#: templates/website/about.html:175
+msgid "Monials"
+msgstr "Monios"
+
+#: templates/website/base.html:157
 msgid "About us"
 msgstr "Acerca de"
 
-#: templates/website/base.html:201
+#: templates/website/base.html:170
 msgid "Latest Tweets"
 msgstr "Últimos tweets"
 
-#: templates/website/base.html:211
+#: templates/website/base.html:177
 msgid "Your Blog"
 msgstr "Tu blog"
 
-#: templates/website/base.html:217
+#: templates/website/base.html:183
 msgid "Contact Info"
 msgstr "Información de Contacto"
 
-#: templates/website/base.html:249
+#: templates/website/base.html:215
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
@@ -200,10 +343,8 @@ msgid "Send Message"
 msgstr "Enviar mensaje"
 
 #: templates/website/contact.html:153
-#, fuzzy
-#| msgid "Send Message"
 msgid "Sending Message, Please Wait"
-msgstr "Enviar mensaje"
+msgstr "Enviando mensaje, Porfavor espere"
 
 #: templates/website/howto.html:12
 msgid "How-To Guide"
@@ -228,23 +369,23 @@ msgstr ""
 "Aquí puedes encontrar nuestro exclusivo listado de propiedades ricas en "
 "naturaleza en Honduras"
 
-#: views.py:80
+#: views.py:85
 msgid "Please enter a valid name."
 msgstr "Por favor ingrese un nombre válido."
 
-#: views.py:88 views.py:98
+#: views.py:93 views.py:103
 msgid "Please enter a valid email."
 msgstr "Porfavor ingrese un correo electrónico válido."
 
-#: views.py:106
+#: views.py:111
 msgid "Please enter a valid subject."
 msgstr "Porfavor ingrese un asunto válido."
 
-#: views.py:114
+#: views.py:119
 msgid "Please enter a valid message."
 msgstr "Profavor ingrese un mensaje valido."
 
-#: views.py:153 views.py:160
+#: views.py:158 views.py:165
 msgid ""
 "We encountered some problems trying to send your message. Please write us "
 "directly to: naturerichproperties@gmail.com"
@@ -252,7 +393,7 @@ msgstr ""
 "Nos encontramos con algunos problemas enviando su mensaje. Porfavor "
 "escribenos directamente a: naturerichproperties@gmail.com"
 
-#: views.py:168 views.py:177
+#: views.py:173 views.py:182
 msgid "Your message was sent, we will contact you soon."
 msgstr "Tu mensaje fue enviado, te contactaremos pronto."
 

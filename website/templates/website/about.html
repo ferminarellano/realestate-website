@@ -2,6 +2,8 @@
 {% load admin_static %}
 {% load humanize %}
 {% load i18n %}
+{% load solo_tags %}
+{% get_solo 'website.SiteConfiguration' as site_config %}
 
 {% block content %}
 <section class="header-banner about-page">
@@ -21,4 +23,187 @@
         </div>
     </div>
 </section>
+
+<section class="about-ecoreal">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 about-ecoreal-content">
+                <p><i class="fa fa-map-marker fa-2x"></i></p>
+                <h2>{% trans "About Nature Rich Properties" %}</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-documents">
+    <div class="container">
+        <div class="col-md-3 document-title">
+            <p>{% trans "OUR MOTTO" %}</p>
+        </div>
+        <div class="col-md-3 pdfone">
+            <a>{% trans "Honesty" %} </a>
+        </div>
+        <div class="col-md-3 pdfone">
+            <a>{% trans "Speed" %} </a>
+        </div>
+        <div class="col-md-3 pdfone">
+            <a>{% trans "Financing" %} </a>
+        </div>
+    </div>
+</section>
+
+<section class="who-we-are">
+    <div class="container-fluid padding-fix">
+        <div class="row">
+            <div class="col-md-6 padding-fix who-we-are-left">
+                <div class="who-we-are-content">
+                    <span>{% trans "Who We Are" %} &amp; {% trans "What We Do" %}</span>
+                    <h2>{% trans "Who We Are" %}</h2>
+                    <p>{% trans "We are a real estate company with 15 years of experience with a large portfolio of satisfied customers from the United States, Canada and Cayman Islands. " %}</p>
+                    <p style="margin-top:12px;">{% trans "Our sales offer includes: &bull; Retirement and Vacation Houses and Villas &bull; Lots for Urban, Resort and Residential Developments &bull; All of our properties are located within safe, touristic natural areas in the departments of Atlantida, Bay Islands and Colon." %}</p>
+                    <a href="/realestate/properties" class="who-we-are-btn">{% trans "View our listing" %}</a>
+                </div>
+            </div>
+            <div class="col-md-6 padding-fix who-we-are-right"></div>
+        </div>
+    </div>
+</section>
+
+<section class="ecoreal-features">
+    <div class="container">
+        <div class="row">
+           <div class="col-md-12">
+               <h2>{% trans "Features of our Nature Rich Properties" %}</h2>
+               <p>{% trans "We focus on properties in natural areas with immediate access to mountains, rivers and beaches, surrounded by amazing sceneries and views. " %}</p>
+           </div>
+            <div class="col-md-4 col-sm-4 about-feature">
+                <div class="row">
+                    <div class="col-md-3 feature-icon">
+                        <i class="fa fa-thumbs-up fa-25x"></i>
+                    </div>
+                    <div class="col-md-9 feature-details">
+                        <h3>{% trans "SAFE COMMUNITIES" %}</h3>
+                        <p>{% trans "All of our properties are located within the safest communities, 20 minutes away from the bustling city." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 about-feature">
+                <div class="row">
+                    <div class="col-md-3 feature-icon">
+                        <i class="fa fa-leaf fa-25x"></i>
+                    </div>
+                    <div class="col-md-9 feature-details">
+                        <h3>{% trans "IN GREEN AREAS" %}</h3>
+                        <p>{% trans "Surrounded by amazing sceneries and breathtaking views. Beachfront, Riverside, Oceanview, you name it!" %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 about-feature">
+                <div class="row">
+                    <div class="col-md-3 feature-icon">
+                        <i class="fa fa-university fa-25x"></i>
+                    </div>
+                    <div class="col-md-9 feature-details">
+                        <h3>{% trans "FINANCING AVAILABLE" %}</h3>
+                        <p>{% trans "Apply with one of our long trusted local banks. " %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 about-feature">
+                <div class="row">
+                    <div class="col-md-3 feature-icon">
+                        <i class="fa fa-tripadvisor fa-25x"></i>
+                    </div>
+                    <div class="col-md-9 feature-details">
+                        <h3>{% trans "TOURIST ATTRACTIONS" %}</h3>
+                        <p>{% trans "From rafting and canopy to hot springs and bird watching, our surroundings offer outdoor activities for all ages." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 about-feature">
+                <div class="row">
+                    <div class="col-md-3 feature-icon">
+                        <i class="fa fa-bolt fa-25x"></i>
+                    </div>
+                    <div class="col-md-9 feature-details">
+                        <h3>{% trans "HASSLE FREE PROCESS" %}</h3>
+                        <p>{% trans "Our legal advisors portfolio will make all the legal process as smooth as a warm carribbean breeze." %}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 about-feature">
+                <div class="row">
+                    <div class="col-md-3 feature-icon">
+                        <i class="fa fa-handshake-o fa-25x"></i>
+                    </div>
+                    <div class="col-md-9 feature-details">
+                        <h3>{% trans "PERSONALIZED SERVICE" %}</h3>
+                        <p>{% trans "Most of our listing is owned by us, so we will be closing deals personally and in no time." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sell-property">
+    <div class="banner-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.4s; animation-name: fadeInUp;">
+                    <div class="call-us">
+                        <h3>{% trans "Do you want to sell your property" %}</h3>
+                        <span>{% trans "Call us and list your property here" %}</span>
+                    </div><!-- end .call-us -->
+                </div><!-- end .col-md-6 -->
+                <div class="col-md-6 col-sm-6 sell-contact wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.6s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0.6s; animation-name: fadeInUp;">
+                    <span>{{ site_config.telephone }} / {{ site_config.telephone2 }}</span><a href="/contact">{% trans "Just Contact us" %}</a>
+                </div><!-- end .col-md-6 -->
+            </div>
+        </div>
+	</div>
+</section>
+
+{% if testimonials|length > 0 %}
+    <section class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="testimonials-title">
+                        <h1 class="section-heading wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 0s; animation-name: fadeInUp;">Testi<span>{% trans "Monials" %}</span></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-carousel-section">
+        <div class="container">
+        	<div class="row">
+                <div id="testimonial-carousel" class="testimonial-carousel wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.5s">
+
+                    {% for testimonial in testimonials %}
+                        <div class="col-md-4 width-fix">
+                            <div class="testimonial-comment">
+                                <p>{{ testimonial.text }}</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="{{ testimonial.picture.thumbnail.url }}" alt="" class="img-circle">
+                                <p>
+                                    <span class="tauthor-name">{{ testimonial.name }}</span>
+                                    <span class="tauthor-role">{{ testimonial.title }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endif%}
+
 {% endblock %}

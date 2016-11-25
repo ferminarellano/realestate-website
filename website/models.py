@@ -68,3 +68,19 @@ class IntroBanner(models.Model):
     class Meta:
         verbose_name = _("Banner Item")
         verbose_name_plural = _("Banner Items")
+
+class Testimonial(models.Model):
+    name = models.CharField(max_length=255, verbose_name=_("Name"))
+    title = models.CharField(max_length=255, verbose_name=_("Title"))
+    picture = StdImageField(upload_to="testimonials", blank=True, variations={
+        'thumbnail': (200, 200, True),
+    }, verbose_name=_("Picture"))
+    text = models.TextField(verbose_name=_("Testimonial text"))
+    active = models.BooleanField(verbose_name=_("Active"), default = True)
+
+    def __unicode__(self):
+        return unicode(_("Testimonial"))
+
+    class Meta:
+        verbose_name = _("Testimonial")
+        verbose_name_plural = _("Testimonials")
