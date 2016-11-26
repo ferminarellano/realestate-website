@@ -6,22 +6,60 @@
 
 {% block content %}
 
-<section class="header-banner single-property-banner">
+<section class="header-banner single-property-banner listings">
     <div class="banner-overlay">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <h2>{% trans "Our Listing" %}</h2>
+                    <h2>{% trans "Our Listings" %}</h2>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <ol class="breadcrumb">
                         <li><a href="">{% trans "Home" %}</a></li>
-                        <li><a class="active">{% trans "Our Listing" %}</a></li>
+                        <li><a class="active">{% trans "Our Listings" %}</a></li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<section class="property-listings">
+    <div class="container">
+    	<div class="row blog-row-one">
+
+            {% for property in properties %}
+                <div class="col-md-6 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.3s">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="property-card">
+                                <div class="left-property-listing pull-left">
+                                    <img src="{{ property.get_feature_picture.picture.thumbnail.url  }}" alt="placeholder image">
+                                </div>
+
+                                <div class="right-property-listing blog-content">
+                                    <div class="text-right">
+                                        <span class="blog-date">{{ property.address }}</span>
+                                    </div>
+
+                                    <h4>{{ property.name }}</h4>
+                                    <p>
+                                        {{ property.description | truncatewords:15 }}
+                                    </p>
+                                    <a href="#">{% trans "Read More"%}</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div><!-- end .container -->
+
+</section>
+
 
 {% endblock %}

@@ -4,6 +4,7 @@ from modeltranslation.admin import TranslationAdmin
 from django.forms.models import BaseInlineFormSet
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
+from modeltranslation.admin import TranslationTabularInline
 
 class PropertyPictureInlineFormSet(BaseInlineFormSet):
    def clean(self):
@@ -20,7 +21,7 @@ class PropertyPictureInlineFormSet(BaseInlineFormSet):
       if total > 1:
          raise ValidationError(_('There can only be one featured picture in a property'))
 
-class PropertyPictureInline(admin.TabularInline):
+class PropertyPictureInline(TranslationTabularInline):
     model = PropertyPicture
     formset = PropertyPictureInlineFormSet
     extra = 1

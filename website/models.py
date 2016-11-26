@@ -54,7 +54,7 @@ class SocialProfile(models.Model):
 
 class IntroBanner(models.Model):
     picture = StdImageField(upload_to="banner", blank=True, variations={
-        'large': (1900, 800, True),
+        'large': (1903, 450, True),
     }, verbose_name=_("Picture"))
     caption_title = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Caption Title"))
     caption_description = models.CharField(max_length=255, blank=True, null=True, verbose_name=_("Caption Description"))

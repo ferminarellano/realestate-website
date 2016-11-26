@@ -38,6 +38,7 @@ class PropertyPicture(models.Model):
     }, verbose_name=_("Picture"))
     property = models.ForeignKey('Property', verbose_name=_("Property"),  related_name='pictures')
     featured = models.BooleanField(verbose_name=_("Featured"), default=False)
+    alt_text = models.TextField(verbose_name=_("Alternative Text"), null=True, blank=True)
 
     def __unicode__(self):
         return unicode(_("Property Picture"))
