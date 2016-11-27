@@ -33,19 +33,32 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="property-card">
-                                <div class="left-property-listing pull-left">
+                                <div class="left-property-listing">
                                     <img src="{{ property.get_feature_picture.picture.thumbnail.url  }}" alt="placeholder image">
                                 </div>
 
                                 <div class="right-property-listing blog-content">
-                                    <div class="text-right">
-                                        <span class="blog-date">{{ property.address }}</span>
-                                    </div>
 
-                                    <h4>{{ property.name }}</h4>
-                                    <p>
-                                        {{ property.description | truncatewords:15 }}
-                                    </p>
+                                    <div class="property-main-container">
+                                        <h4>{{ property.name }}</h4>
+
+                                        <div class="property-info-container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="prop-price-container">
+                                                        <span class="prop-price">{{ property.price | floatformat:"0" | intcomma }}</span>
+                                                    </div>
+                                                    <div class="property-address">
+                                                        <span class="blog-date">{{ property.address }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            {{ property.description | truncatewords:15 }}
+                                        </p>
+                                    </div>
+                                    
                                     <a href="/realestate/detail/{{ property.id }}">{% trans "Read More"%}</a>
                                 </div>
                             </div>

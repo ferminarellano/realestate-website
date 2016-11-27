@@ -26,7 +26,6 @@ section.property-listings{
 }
 
 section.property-listings .blog-content a{
-    margin-left: unset;
     display: inline-block;
 }
 
@@ -62,7 +61,7 @@ section.property-listings .blog-content a{
     font-family: FontAwesome;
     left: 0;
     position: absolute;
-    top: 0;
+    top: unset;
     color: #4cb050;
 }
 
@@ -387,4 +386,167 @@ aside.col-sm-3 {
     background: url(/static/website/images/arboles.jpg);
     background-position: 100% 70%;
     background-size: cover;
+}
+
+.blog-content .blog-date{
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.prop-price-container{
+    display: inline-block;
+    position: relative;
+}
+
+.prop-price {
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.prop-price:before {
+    content: "\f155";
+    font-family: FontAwesome;
+    left: 0;
+    position: absolute;
+    top: 0;
+    color: #4cb050;
+}
+
+@media only screen and (min-width : 320px) {
+
+}
+
+@media only screen and (max-width : 479px) {
+    .property-card{
+        height: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 0px;
+    }
+
+    .left-property-listing{
+        float:none;
+        width: 100%;
+        margin: 0;
+        height: 280px;
+        overflow-y: hidden;
+    }
+
+    .left-property-listing img{
+        width: 100%;
+    }
+
+    .right-property-listing{
+        padding: 10px;
+        margin-bottom: 0px;
+    }
+
+    .property-address {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .property-info-container{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .prop-price-container{
+        float: left;
+    }
+
+    .property-address{
+        float: right;
+    }
+
+    .blog-content a{
+        margin-left: calc(100% - 120px);
+    }
+}
+
+@media only screen and (min-width : 480px) {
+    .property-card{
+        height: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 0px;
+        max-width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .property-main-container{
+        max-height: 145px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .property-info-container{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .prop-price-container{
+        float: left;
+    }
+
+    .property-address {
+        display: inline-block;
+        margin-left: 10px;
+        float: right;
+    }
+
+    .left-property-listing{
+        float: left;
+        width: calc(33% + 22px);
+        max-width: 200px;
+        height: 200px;
+        margin: 0;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .blog-content h4{
+        margin-top: 0px;
+            margin-bottom: 5px;
+    }
+
+    .left-property-listing img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .right-property-listing{
+        overflow: hidden;
+        padding: 15px 20px;
+        margin-bottom: 0px;
+        height: 200px;
+        position: relative;
+    }
+
+    .blog-content a{
+        margin-left: calc(100% - 120px);
+        padding: 5px 22px;
+        width: 120px;
+        position: absolute;
+        bottom:0;
+        right: 0;
+    }
+
+    .blog-content p{
+        padding-bottom: 0px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
 }
