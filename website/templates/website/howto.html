@@ -21,4 +21,96 @@
         </div>
     </div>
 </section>
+
+<section class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 content-page-inner-area">
+                <h2>{% trans "We'll Guide You Through the Buying Process" %}</h2>
+
+                <div class="image-left-content clearfix">
+                    <div class="col-md-6 padding-fix">
+                        <img src="{% static "website/images/call.jpg" %}" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{% trans "Who can buy?" %}</h3>
+                        <p>{% trans "Any person, national or foreigner, can buy property in Honduras. In the case you are a foreigner, you can personally buy up to 3/4 of an acre, to make purchases of greater proportions of land it is necessary to form a Honduran corporation. The corporation becomes owner of the property's title, being the foreign buyer the sole administrator, who will have all the faculties on the property in its administration, possession, domain. The buyer will have the freedom to sell the corporation if he or she wants." %}</p>
+                    </div>
+                </div><!-- end image left content -->
+
+                <div class="image-right-content clearfix">
+                    <div class="col-md-6">
+                        <h3>{% trans "I want to buy, now what?" %}</h3>
+                        <p>{% trans "First we will sign a purchase and sale agreement where an escrow account is established. Then a lawyer of your choosing will make a background check of the property and its documentation. This includes:" %} </p>
+                        <ul class="list-unstyled">
+                            <li>{% trans "Property background check (Owners, land titles)" %}</li>
+                            <li>{% trans "Property Inspections" %}</li>
+                            <li>{% trans "Liens, encumbrances and mortgages" %}</li>
+                            <li>{% trans "Pending taxes" %}</li>
+                            <li>{% trans "Topographic plan done by a Civil Engineer" %}</li>
+                            <li>{% trans "Inspections in the Property and Cadastral Registry" %}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 padding-fix">
+                        <img src="{% static "website/images/green.jpg" %}" alt="" class="img-responsive">
+                    </div>
+                </div><!-- end image right content -->
+
+                <div class="image-left-content clearfix">
+                    <div class="col-md-6 padding-fix">
+                        <img src="{% static "website/images/familia.jpg" %}" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{% trans "Is there any legal advise available?" %}</h3>
+                        <p>{% trans "We have a portfolio of bilingual lawyers specialized in this type of transactions, who have an extensive portfolio of businesses made with foreigners and nationals. They will dissipate any doubts you or your lawyers might have about the process of buying and selling. The lawyer you choose has to be honduran or a member of the Honduran bar association." %}</p>
+                    </div>
+                </div><!-- end image left content -->
+
+                <div class="image-right-content clearfix">
+                    <div class="col-md-6">
+                        <h3>{% trans "What method of payments are available" %}</h3>
+                        <p>{% trans "This is done in mutual agreement with the seller of the property. You can even get a payment plan, but that depends on the type of agreement you make with the seller. The payment process can be done by: " %} </p>
+                        <ul class="list-unstyled">
+                            <li>{% trans "Bank Transfer, ACH" %}</li>
+                            <li>{% trans "Bank check" %}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 padding-fix">
+                        <img src="{% static "website/images/calculadora.jpg" %}" alt="" class="img-responsive">
+                    </div>
+                </div><!-- end image right content -->
+
+            </div><!-- end content-page-inner-area -->
+
+            <div class="col-md-3 blog-sidebar content-page-right-sidebar">
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Recent Properties</h3>
+                    <div class="widget-content">
+                        <div class="small-property-list">
+                            {% for property in properties %}
+                                <div class="small-property clearfix">
+                                    <div class="property-small-picture col-sm-12 col-md-4">
+                                        <a href="/realestate/detail/{{ property.id }}">
+                                            <img src="{{ property.get_feature_picture.picture.thumbnail.url }}" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="property-small-content col-sm-12 col-md-8">
+                                        <h4><a href="">{{ property.name }}</a></h4>
+                                        <p><span>${{ property.price | floatformat:"0" | intcomma }}</span></p>
+                                    </div>
+                                </div><!-- Small Property Ends -->
+                            {% endfor %}
+                        </div>
+                    </div><!-- Widget content Ends -->
+                </div><!-- Sidebar Widget Ends -->
+
+
+            </div><!-- Blog Sidebar ends -->
+        </div>
+    </div>
+</section>
+
+
+
 {% endblock %}

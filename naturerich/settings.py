@@ -5,6 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = False
 ALLOWED_HOSTS = []
 SITE_ID = 1
+FORCE_LOWERCASE_TAGS = True
 
 INSTALLED_APPS = [
     'modeltranslation',
@@ -19,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'solo',
     'stdimage',
+    'tagging',
     'website.apps.WebsiteConfig',
     'realestate.apps.RealestateConfig'
 ]

@@ -47,12 +47,14 @@ def about(request):
 def howto(request):
 	menu_items = MenuItem.objects.filter(active=True).order_by('position')
 	social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
+	recent_properties = Property.objects.filter(active=True).order_by('-id')[:3]
 
 	template = loader.get_template('website/howto.html')
 
 	context = RequestContext(request, {
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
+		'properties': recent_properties,
 		'request': request
 	})
 	return HttpResponse(template.render(context))

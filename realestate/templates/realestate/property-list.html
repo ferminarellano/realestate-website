@@ -4,6 +4,10 @@
 {% load i18n %}
 {% load l10n %}
 
+{% block custom_css %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+{% endblock %}
+
 {% block content %}
 
 <section class="header-banner single-property-banner listings">
@@ -26,6 +30,19 @@
 
 <section class="property-listings">
     <div class="container">
+        {% comment %}
+        <div class="filter-container">
+            <form class="" action="index.html" method="post">
+                <select class="form-control property-filters" name="property-filters" multiple="multiple">
+                    <option value="1">Hello</option>
+                    <option value="2">Hello</option>
+                </select>
+
+                <button type="button" name="button">{% trans "Search" %}</button>
+            </form>
+
+        </div>
+        {% endcomment %}
     	<div class="row blog-row-one">
 
             {% for property in properties %}
@@ -58,7 +75,7 @@
                                             {{ property.description | truncatewords:15 }}
                                         </p>
                                     </div>
-                                    
+
                                     <a href="/realestate/detail/{{ property.id }}">{% trans "Read More"%}</a>
                                 </div>
                             </div>
@@ -75,4 +92,12 @@
 </section>
 
 
+{% endblock %}
+
+{% block custom_js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+    <script type="text/javascript">
+      $('.property-filters').select2();
+    </script>
 {% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-25 00:52-0600\n"
+"POT-Creation-Date: 2016-11-29 10:14-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -138,7 +138,7 @@ msgstr "Testimonios"
 msgid "About Nature Rich Properties"
 msgstr "Acerca de Nature Rich Properties"
 
-#: templates/website/about.html:18 templates/website/base.html:116
+#: templates/website/about.html:18 templates/website/base.html:118
 #: templates/website/contact.html:18 templates/website/howto.html:16
 msgid "Home"
 msgstr "Inicio"
@@ -172,7 +172,9 @@ msgid ""
 "We are a real estate company with 15 years of experience with a large "
 "portfolio of satisfied customers from the United States, Canada and Cayman "
 "Islands. "
-msgstr "Somos una compañia de bienes raices con 15 años de experiencia con una gran cartera de clientes satisfechos de los Estados Unidos, Canada e Islas Cayman."
+msgstr ""
+"Somos una compañia de bienes raices con 15 años de experiencia con una gran "
+"cartera de clientes satisfechos de los Estados Unidos, Canada e Islas Cayman."
 
 #: templates/website/about.html:63
 msgid ""
@@ -180,10 +182,17 @@ msgid ""
 "&bull; Lots for Urban, Resort and Residential Developments &bull; All of our "
 "properties are located within safe, touristic natural areas in the "
 "departments of Atlantida, Bay Islands and Colon."
-msgstr "Nuesta oferta de venta incluye: &bull; Casas Habitacionales y Villas para retiro y vacaciones &bull; Propiedades para Desarrollos Urbanos, Hoteleros y Residenciales &bull; Todas nuestras propiedades están ubicadas en areas naturales turísticas y seguras en los departamentos de Atlántida, Islas de la Bahía y Colón."
+msgstr ""
+"Nuesta oferta de venta incluye: &bull; Casas Habitacionales y Villas para "
+"retiro y vacaciones &bull; Propiedades para Desarrollos Urbanos, Hoteleros y "
+"Residenciales &bull; Todas nuestras propiedades están ubicadas en areas "
+"naturales turísticas y seguras en los departamentos de Atlántida, Islas de "
+"la Bahía y Colón."
 
 #: templates/website/about.html:64
-msgid "View our listing"
+#, fuzzy
+#| msgid "View our listing"
+msgid "View our listings"
 msgstr "Ver propiedades"
 
 #: templates/website/about.html:76
@@ -194,7 +203,9 @@ msgstr "Características de nuestras Propiedades"
 msgid ""
 "We focus on properties in natural areas with immediate access to mountains, "
 "rivers and beaches, surrounded by amazing sceneries and views. "
-msgstr "Nos enfocamos en propiedades en areas naturales con acceso inmediato a montañas, rios y playas, rodeadas de asombrosos paisajes y vistas."
+msgstr ""
+"Nos enfocamos en propiedades en areas naturales con acceso inmediato a "
+"montañas, rios y playas, rodeadas de asombrosos paisajes y vistas."
 
 #: templates/website/about.html:85
 msgid "SAFE COMMUNITIES"
@@ -204,7 +215,9 @@ msgstr "COMUNIDADES SEGURAS"
 msgid ""
 "All of our properties are located within the safest communities, 20 minutes "
 "away from the bustling city."
-msgstr "Todas nuestras propiedades están ubicadas en las comunidades más seguras a 20 minutos de la bullisiosa ciudad."
+msgstr ""
+"Todas nuestras propiedades están ubicadas en las comunidades más seguras a "
+"20 minutos de la bullisiosa ciudad."
 
 #: templates/website/about.html:96
 msgid "IN GREEN AREAS"
@@ -214,7 +227,9 @@ msgstr "EN AREAS NATURALES"
 msgid ""
 "Surrounded by amazing sceneries and breathtaking views. Beachfront, "
 "Riverside, Oceanview, you name it!"
-msgstr "Rodeadas de asombrosos paisajes y vistas impresionantes. De mar, de río, con vista al océano, ¡tú decides!"
+msgstr ""
+"Rodeadas de asombrosos paisajes y vistas impresionantes. De mar, de río, con "
+"vista al océano, ¡tú decides!"
 
 #: templates/website/about.html:107
 msgid "FINANCING AVAILABLE"
@@ -222,7 +237,8 @@ msgstr "FINANCIAMIENTO"
 
 #: templates/website/about.html:108
 msgid "Apply with one of our long trusted local banks. "
-msgstr "Aplica a financiamiento con uno de nuestro bancos locales de confianza."
+msgstr ""
+"Aplica a financiamiento con uno de nuestro bancos locales de confianza."
 
 #: templates/website/about.html:120
 msgid "TOURIST ATTRACTIONS"
@@ -232,7 +248,9 @@ msgstr "ATRACCIONES TURISTICAS"
 msgid ""
 "From rafting and canopy to hot springs and bird watching, our surroundings "
 "offer outdoor activities for all ages."
-msgstr "Desde rafting y canopy, hasta aguas termales y avistamiento de aves, nuestros alrededores ofrecen actividades para todas las edades."
+msgstr ""
+"Desde rafting y canopy, hasta aguas termales y avistamiento de aves, "
+"nuestros alrededores ofrecen actividades para todas las edades."
 
 #: templates/website/about.html:131
 msgid "HASSLE FREE PROCESS"
@@ -242,7 +260,9 @@ msgstr "PROCESO SIN MOLESTIAS"
 msgid ""
 "Our legal advisors portfolio will make all the legal process as smooth as a "
 "warm carribbean breeze."
-msgstr "Nuestra cartera de asesores legales harán el proceso tan suave como una cálida brisa marina."
+msgstr ""
+"Nuestra cartera de asesores legales harán el proceso tan suave como una "
+"cálida brisa marina."
 
 #: templates/website/about.html:142
 msgid "PERSONALIZED SERVICE"
@@ -252,7 +272,9 @@ msgstr "SERVICIO PERSONALIZADO"
 msgid ""
 "Most of our listing is owned by us, so we will be closing deals personally "
 "and in no time."
-msgstr "La mayoría de propiedades en catálogo son nuestras, así que cerraremos los tratos personalmente y de inmediato."
+msgstr ""
+"La mayoría de propiedades en catálogo son nuestras, así que cerraremos los "
+"tratos personalmente y de inmediato."
 
 #: templates/website/about.html:157
 msgid "Do you want to sell your property"
@@ -270,23 +292,23 @@ msgstr "Contáctanos"
 msgid "Monials"
 msgstr "Monios"
 
-#: templates/website/base.html:157
+#: templates/website/base.html:159
 msgid "About us"
 msgstr "Acerca de"
 
-#: templates/website/base.html:170
+#: templates/website/base.html:172
 msgid "Latest Tweets"
 msgstr "Últimos tweets"
 
-#: templates/website/base.html:177
+#: templates/website/base.html:179
 msgid "Your Blog"
 msgstr "Tu blog"
 
-#: templates/website/base.html:183
+#: templates/website/base.html:185
 msgid "Contact Info"
 msgstr "Información de Contacto"
 
-#: templates/website/base.html:215
+#: templates/website/base.html:217
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
@@ -354,6 +376,92 @@ msgstr "Guía Tutorial"
 msgid "How-To"
 msgstr "Como Comprar"
 
+#: templates/website/howto.html:29
+msgid "We'll Guide You Through the Buying Process"
+msgstr "Lo Guiaremos en el Proceso de Compra"
+
+#: templates/website/howto.html:36
+msgid "Who can buy?"
+msgstr "¿Quien puede comprar?"
+
+#: templates/website/howto.html:37
+msgid ""
+"Any person, national or foreigner, can buy property in Honduras. In the case "
+"you are a foreigner, you can personally buy up to 3/4 of an acre, to make "
+"purchases of greater proportions of land it is necessary to form a Honduran "
+"corporation. The corporation becomes owner of the property's title, being "
+"the foreign buyer the sole administrator, who will have all the faculties on "
+"the property in its administration, possession, domain. The buyer will have "
+"the freedom to sell the corporation if he or she wants."
+msgstr "Cualquier persona, local o extranjera, puede comprar propiedad en Honduras. En el caso de ser un extranjero, usted puede comprar a titulo personal hasta 3/4 de acre, para realizar compras de mayores proporciones de tierra es necesario formar una corporación Hondureña. La corporación se vuelve la propietaria del titulo de la propiedad, siendo el comprador extranjero el unico administrador, quien tendrá todas las facultades de las propiedad en su administración, posesion, dominio y venta de la corporación si lo desea."
+
+#: templates/website/howto.html:43
+msgid "I want to buy, now what?"
+msgstr "Quiero comprar, ¿Ahora qué?"
+
+#: templates/website/howto.html:44
+msgid ""
+"First we will sign a purchase and sale agreement where an escrow account is "
+"established. Then a lawyer of your choosing will make a background check of "
+"the property and its documentation. This includes:"
+msgstr "Primero firmaremos un acuerdo de compra-venta donde una cuenta de deposito en garantía es establecida. Luego un abogado seleccionado por usted realizará inspecciones de la propiedad y su documentación. Esto incluye:"
+
+#: templates/website/howto.html:46
+msgid "Property background check (Owners, land titles)"
+msgstr "Revision de Antecedentes de la Propiedad (Dueños, titulos)"
+
+#: templates/website/howto.html:47
+msgid "Property Inspections"
+msgstr "Inspecciones de la propiedad"
+
+#: templates/website/howto.html:48
+msgid "Liens, encumbrances and mortgages"
+msgstr "Embargos, gravámenes e hipotécas"
+
+#: templates/website/howto.html:49
+msgid "Pending taxes"
+msgstr "Impuestos pendientes"
+
+#: templates/website/howto.html:50
+msgid "Topographic plan done by a Civil Engineer"
+msgstr "Plano topográfico realizado por un Ingeniero Civil"
+
+#: templates/website/howto.html:51
+msgid "Inspections in the Property and Cadastral Registry"
+msgstr "Inspecciones en los Registros de la Propiedad y Catastro"
+
+#: templates/website/howto.html:64
+msgid "Is there any legal advise available?"
+msgstr "¿Hay asesoría legal disponible?"
+
+#: templates/website/howto.html:65
+msgid ""
+"We have a portfolio of bilingual lawyers specialized in this type of "
+"transactions, who have an extensive portfolio of businesses made with "
+"foreigners and nationals. They will dissipate any doubts you or your lawyers "
+"might have about the process of buying and selling. The lawyer you choose "
+"has to be honduran or a member of the Honduran bar association."
+msgstr "Tenemos una cartera de abogados bilingues especializado en este tipo de transacciones, quienes tienen una extensiva cartera de negocios realizados con extranjeros y locales. Ellos disíparan cualquier duda que puedan tener usted o sus abogados acerca del proceso de compra-venta. El abogado que usted elija debe ser hondureño o miembro del Colegio de Abogados de Honduras."
+
+#: templates/website/howto.html:71
+msgid "What method of payments are available"
+msgstr "¿Que métodos de pago exísten?"
+
+#: templates/website/howto.html:72
+msgid ""
+"This is done in mutual agreement with the seller of the property. You can "
+"even get a payment plan, but that depends on the type of agreement you make "
+"with the seller. The payment process can be done by: "
+msgstr "Esto se realiza en mutuo acuerdo con el vendedor de la propiedad. Puede conseguir inclusive un plan de pagos, pero depende en el tipo de acuerdo que haya hecho con el vendedor. Los metódos de pago pueden ser:"
+
+#: templates/website/howto.html:74
+msgid "Bank Transfer, ACH"
+msgstr "Transferencia Bancaria, ACH"
+
+#: templates/website/howto.html:75
+msgid "Bank check"
+msgstr "Cheque de Caja"
+
 #: templates/website/index.html:36
 msgid "Amazing"
 msgstr "Asombrosas"
@@ -369,23 +477,23 @@ msgstr ""
 "Aquí puedes encontrar nuestro exclusivo listado de propiedades ricas en "
 "naturaleza en Honduras"
 
-#: views.py:85
+#: views.py:87
 msgid "Please enter a valid name."
 msgstr "Por favor ingrese un nombre válido."
 
-#: views.py:93 views.py:103
+#: views.py:95 views.py:105
 msgid "Please enter a valid email."
 msgstr "Porfavor ingrese un correo electrónico válido."
 
-#: views.py:111
+#: views.py:113
 msgid "Please enter a valid subject."
 msgstr "Porfavor ingrese un asunto válido."
 
-#: views.py:119
+#: views.py:121
 msgid "Please enter a valid message."
 msgstr "Profavor ingrese un mensaje valido."
 
-#: views.py:158 views.py:165
+#: views.py:160 views.py:167
 msgid ""
 "We encountered some problems trying to send your message. Please write us "
 "directly to: naturerichproperties@gmail.com"
@@ -393,7 +501,7 @@ msgstr ""
 "Nos encontramos con algunos problemas enviando su mensaje. Porfavor "
 "escribenos directamente a: naturerichproperties@gmail.com"
 
-#: views.py:173 views.py:182
+#: views.py:175 views.py:184
 msgid "Your message was sent, we will contact you soon."
 msgstr "Tu mensaje fue enviado, te contactaremos pronto."
 

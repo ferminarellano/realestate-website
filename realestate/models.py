@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from stdimage.models import StdImageField
 from django.core.exceptions import ValidationError
+from tagging.registry import register
+from tagging.fields import TagField
 
 class Property(models.Model):
     name = models.CharField(max_length=255, verbose_name=_("Name"))
@@ -17,6 +19,7 @@ class Property(models.Model):
     longitude = models.FloatField(verbose_name=_("Longitude"))
     map_zoom = models.PositiveIntegerField(verbose_name=_("Map Zoom"), default=16)
     active = models.BooleanField(verbose_name=_("Active"), default = True)
+    tags = TagField()
 
     def get_feature_picture(self):
         picture = self.pictures.filter(featured=True).first()
