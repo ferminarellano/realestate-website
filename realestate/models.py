@@ -19,6 +19,7 @@ class Property(models.Model):
     longitude = models.FloatField(verbose_name=_("Longitude"))
     map_zoom = models.PositiveIntegerField(verbose_name=_("Map Zoom"), default=16)
     active = models.BooleanField(verbose_name=_("Active"), default = True)
+    featured = models.BooleanField(verbose_name=_("Featured Property"), default = False)
     tags = TagField()
 
     def get_feature_picture(self):

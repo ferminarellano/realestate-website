@@ -15,7 +15,7 @@ from realestate.models import Property
 def index(request):
 	menu_items = MenuItem.objects.filter(active=True).order_by('position')
 	social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
-	properties = Property.objects.filter(active=True).order_by('-id')
+	properties = Property.objects.filter(active=True).order_by('-featured','-id')
 	banner_items = IntroBanner.objects.filter(active=True).order_by('position')
 
 	template = loader.get_template('website/index.html')

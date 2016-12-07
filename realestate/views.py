@@ -168,7 +168,7 @@ def detail_view(request, property_id):
 def list_view(request):
     menu_items = MenuItem.objects.filter(active=True).order_by('position')
     social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
-    properties = Property.objects.filter(active=True).order_by('-id')
+    properties = Property.objects.filter(active=True).order_by('-featured','-id')
 
     template = loader.get_template('realestate/property-list.html')
 
