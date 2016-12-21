@@ -154,9 +154,14 @@ def detail_view(request, slug):
     template = 'realestate/property-detail.html'
 
     cur_language = translation.get_language()
+
     try:
-        translation.activate('en')
-        redirect_to = reverse('detail-view', kwargs={'slug':property.slug})
+        if cur_language == 'en':
+            translation.activate('es')
+            redirect_to = reverse('detail-view', kwargs={'slug':property.slug})
+        if cur_language == 'es':
+            translation.activate('en')
+            redirect_to = reverse('detail-view', kwargs={'slug':property.slug})
     finally:
         translation.activate(cur_language)
 
