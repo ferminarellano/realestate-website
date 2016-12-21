@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <ol class="breadcrumb">
-                        <li><a href="">{% trans "Home" %}</a></li>
+                        <li><a href="{% if request.path == "/" %}/{% elif "/es/" in request.path %}/es/{% else %}/{% endif %}">{% trans "Home" %}</a></li>
                         <li><a class="active">{% trans "Contact Us" %}</a></li>
                     </ol>
                 </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-29 10:14-0600\n"
+"POT-Creation-Date: 2016-12-16 16:15-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -138,7 +138,7 @@ msgstr "Testimonios"
 msgid "About Nature Rich Properties"
 msgstr "Acerca de Nature Rich Properties"
 
-#: templates/website/about.html:18 templates/website/base.html:118
+#: templates/website/about.html:18 templates/website/base.html:145
 #: templates/website/contact.html:18 templates/website/howto.html:16
 msgid "Home"
 msgstr "Inicio"
@@ -190,10 +190,8 @@ msgstr ""
 "la Bahía y Colón."
 
 #: templates/website/about.html:64
-#, fuzzy
-#| msgid "View our listing"
 msgid "View our listings"
-msgstr "Ver propiedades"
+msgstr "Ver nuestras propiedades"
 
 #: templates/website/about.html:76
 msgid "Features of our Nature Rich Properties"
@@ -292,23 +290,23 @@ msgstr "Contáctanos"
 msgid "Monials"
 msgstr "Monios"
 
-#: templates/website/base.html:159
+#: templates/website/base.html:186
 msgid "About us"
 msgstr "Acerca de"
 
-#: templates/website/base.html:172
+#: templates/website/base.html:199
 msgid "Latest Tweets"
 msgstr "Últimos tweets"
 
-#: templates/website/base.html:179
+#: templates/website/base.html:206
 msgid "Your Blog"
 msgstr "Tu blog"
 
-#: templates/website/base.html:185
+#: templates/website/base.html:212
 msgid "Contact Info"
 msgstr "Información de Contacto"
 
-#: templates/website/base.html:217
+#: templates/website/base.html:244
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
@@ -393,7 +391,14 @@ msgid ""
 "the foreign buyer the sole administrator, who will have all the faculties on "
 "the property in its administration, possession, domain. The buyer will have "
 "the freedom to sell the corporation if he or she wants."
-msgstr "Cualquier persona, local o extranjera, puede comprar propiedad en Honduras. En el caso de ser un extranjero, usted puede comprar a titulo personal hasta 3/4 de acre, para realizar compras de mayores proporciones de tierra es necesario formar una corporación Hondureña. La corporación se vuelve la propietaria del titulo de la propiedad, siendo el comprador extranjero el unico administrador, quien tendrá todas las facultades de las propiedad en su administración, posesion, dominio y venta de la corporación si lo desea."
+msgstr ""
+"Cualquier persona, local o extranjera, puede comprar propiedad en Honduras. "
+"En el caso de ser un extranjero, usted puede comprar a titulo personal hasta "
+"3/4 de acre, para realizar compras de mayores proporciones de tierra es "
+"necesario formar una corporación Hondureña. La corporación se vuelve la "
+"propietaria del titulo de la propiedad, siendo el comprador extranjero el "
+"unico administrador, quien tendrá todas las facultades de las propiedad en "
+"su administración, posesion, dominio y venta de la corporación si lo desea."
 
 #: templates/website/howto.html:43
 msgid "I want to buy, now what?"
@@ -404,7 +409,10 @@ msgid ""
 "First we will sign a purchase and sale agreement where an escrow account is "
 "established. Then a lawyer of your choosing will make a background check of "
 "the property and its documentation. This includes:"
-msgstr "Primero firmaremos un acuerdo de compra-venta donde una cuenta de deposito en garantía es establecida. Luego un abogado seleccionado por usted realizará inspecciones de la propiedad y su documentación. Esto incluye:"
+msgstr ""
+"Primero firmaremos un acuerdo de compra-venta donde una cuenta de deposito "
+"en garantía es establecida. Luego un abogado seleccionado por usted "
+"realizará inspecciones de la propiedad y su documentación. Esto incluye:"
 
 #: templates/website/howto.html:46
 msgid "Property background check (Owners, land titles)"
@@ -441,7 +449,12 @@ msgid ""
 "foreigners and nationals. They will dissipate any doubts you or your lawyers "
 "might have about the process of buying and selling. The lawyer you choose "
 "has to be honduran or a member of the Honduran bar association."
-msgstr "Tenemos una cartera de abogados bilingues especializado en este tipo de transacciones, quienes tienen una extensiva cartera de negocios realizados con extranjeros y locales. Ellos disíparan cualquier duda que puedan tener usted o sus abogados acerca del proceso de compra-venta. El abogado que usted elija debe ser hondureño o miembro del Colegio de Abogados de Honduras."
+msgstr ""
+"Tenemos una cartera de abogados bilingues especializado en este tipo de "
+"transacciones, quienes tienen una extensiva cartera de negocios realizados "
+"con extranjeros y locales. Ellos disíparan cualquier duda que puedan tener "
+"usted o sus abogados acerca del proceso de compra-venta. El abogado que "
+"usted elija debe ser hondureño o miembro del Colegio de Abogados de Honduras."
 
 #: templates/website/howto.html:71
 msgid "What method of payments are available"
@@ -452,7 +465,10 @@ msgid ""
 "This is done in mutual agreement with the seller of the property. You can "
 "even get a payment plan, but that depends on the type of agreement you make "
 "with the seller. The payment process can be done by: "
-msgstr "Esto se realiza en mutuo acuerdo con el vendedor de la propiedad. Puede conseguir inclusive un plan de pagos, pero depende en el tipo de acuerdo que haya hecho con el vendedor. Los metódos de pago pueden ser:"
+msgstr ""
+"Esto se realiza en mutuo acuerdo con el vendedor de la propiedad. Puede "
+"conseguir inclusive un plan de pagos, pero depende en el tipo de acuerdo que "
+"haya hecho con el vendedor. Los metódos de pago pueden ser:"
 
 #: templates/website/howto.html:74
 msgid "Bank Transfer, ACH"
@@ -477,23 +493,35 @@ msgstr ""
 "Aquí puedes encontrar nuestro exclusivo listado de propiedades ricas en "
 "naturaleza en Honduras"
 
-#: views.py:87
+#: urls.py:9
+msgid "^about/$"
+msgstr "^acerca-de/$"
+
+#: urls.py:10
+msgid "^how-to/$"
+msgstr "^como-comprar/$"
+
+#: urls.py:11
+msgid "^contact/$"
+msgstr "^contactenos/$"
+
+#: views.py:90
 msgid "Please enter a valid name."
 msgstr "Por favor ingrese un nombre válido."
 
-#: views.py:95 views.py:105
+#: views.py:98 views.py:108
 msgid "Please enter a valid email."
 msgstr "Porfavor ingrese un correo electrónico válido."
 
-#: views.py:113
+#: views.py:116
 msgid "Please enter a valid subject."
 msgstr "Porfavor ingrese un asunto válido."
 
-#: views.py:121
+#: views.py:124
 msgid "Please enter a valid message."
 msgstr "Profavor ingrese un mensaje valido."
 
-#: views.py:160 views.py:167
+#: views.py:163 views.py:170
 msgid ""
 "We encountered some problems trying to send your message. Please write us "
 "directly to: naturerichproperties@gmail.com"
@@ -501,7 +529,7 @@ msgstr ""
 "Nos encontramos con algunos problemas enviando su mensaje. Porfavor "
 "escribenos directamente a: naturerichproperties@gmail.com"
 
-#: views.py:175 views.py:184
+#: views.py:178 views.py:187
 msgid "Your message was sent, we will contact you soon."
 msgstr "Tu mensaje fue enviado, te contactaremos pronto."
 

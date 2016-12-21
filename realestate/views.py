@@ -11,8 +11,10 @@ from django.utils.translation import ugettext_lazy as _
 import json
 from django.core.mail import send_mail
 from smtplib import SMTPException
+from django.utils import translation
+from django.core.urlresolvers import reverse
 
-def detail_view(request, property_id):
+def detail_view(request, slug):
     errors = []
     messages = []
     name = ""
@@ -22,7 +24,7 @@ def detail_view(request, property_id):
 
     menu_items = MenuItem.objects.filter(active=True).order_by('position')
     social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
-    property = get_object_or_404(Property, pk = property_id)
+    property = get_object_or_404(Property, slug = slug)
     recent_properties = Property.objects.filter(active=True).order_by('-id')[:3]
 
     if request.method == "POST":
@@ -151,6 +153,13 @@ def detail_view(request, property_id):
 
     template = 'realestate/property-detail.html'
 
+    cur_language = translation.get_language()
+    try:
+        translation.activate('en')
+        redirect_to = reverse('detail-view', kwargs={'slug':property.slug})
+    finally:
+        translation.activate(cur_language)
+
     context = {
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
@@ -160,7 +169,8 @@ def detail_view(request, property_id):
 		'name': name,
 		'email': email,
 		'phone': phone,
-		'message': message
+		'message': message,
+        'redirect_to': redirect_to
 	}
 
     return render(request, template, context)
@@ -170,12 +180,13 @@ def list_view(request):
     social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
     properties = Property.objects.filter(active=True).order_by('-featured','-id')
 
-    template = loader.get_template('realestate/property-list.html')
+    template = 'realestate/property-list.html'
 
-    context = RequestContext(request, {
+    context = {
         'menu_items': menu_items,
         'social_profiles': social_profiles,
         'properties': properties,
-        'request': request
-    })
-    return HttpResponse(template.render(context))
+        'request': request,
+        'redirect_to': "/realestate/properties/",
+    }
+    return render(request, template, context)

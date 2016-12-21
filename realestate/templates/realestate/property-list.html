@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <ol class="breadcrumb">
-                        <li><a href="">{% trans "Home" %}</a></li>
+                        <li><a href="{% if request.path == "/" %}/{% elif "/es/" in request.path %}/es/{% else %}/{% endif %}">{% trans "Home" %}</a></li>
                         <li><a class="active">{% trans "Our Listings" %}</a></li>
                     </ol>
                 </div>
@@ -76,7 +76,7 @@
                                         </p>
                                     </div>
 
-                                    <a href="/realestate/detail/{{ property.id }}">{% trans "Read More"%}</a>
+                                    <a href="{{ property.get_absolute_url }}">{% trans "Read More"%}</a>
                                 </div>
                             </div>
 

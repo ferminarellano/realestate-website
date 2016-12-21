@@ -8,7 +8,7 @@ class SiteConfigurationAdmin(SingletonModelAdmin, TranslationAdmin):
 
 class MenuItemAdmin(TranslationAdmin):
     group_fieldsets = True
-    list_display = ('name', 'url', 'position', 'active')
+    list_display = ('name', 'position', 'active')
     list_editable = ['position', 'active']
 
 class SocialProfileAdmin(admin.ModelAdmin):

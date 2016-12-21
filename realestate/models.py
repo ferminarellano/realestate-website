@@ -5,6 +5,8 @@ from stdimage.models import StdImageField
 from django.core.exceptions import ValidationError
 from tagging.registry import register
 from tagging.fields import TagField
+from django.core.urlresolvers import reverse
+from django.utils.text import slugify
 
 class Property(models.Model):
     name = models.CharField(max_length=255, verbose_name=_("Name"))
@@ -20,7 +22,15 @@ class Property(models.Model):
     map_zoom = models.PositiveIntegerField(verbose_name=_("Map Zoom"), default=16)
     active = models.BooleanField(verbose_name=_("Active"), default = True)
     featured = models.BooleanField(verbose_name=_("Featured Property"), default = False)
+    slug = models.SlugField(blank=True, null=True)
     tags = TagField()
+
+    def get_absolute_url(self):
+        return reverse('detail-view', args=(self.slug,))
+
+    def save(self):
+        self.slug = slugify(self.name)
+        super(Property, self).save()
 
     def get_feature_picture(self):
         picture = self.pictures.filter(featured=True).first()

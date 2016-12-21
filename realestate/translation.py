@@ -2,7 +2,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from realestate.models import Property, PropertyPicture
 
 class PropertyTranslationOptions(TranslationOptions):
-    fields = ('name', 'address', 'description')
+    fields = ('name', 'address', 'description','slug')
 
 class PropertyPictureTranslationOptions(TranslationOptions):
     fields = ('alt_text',)

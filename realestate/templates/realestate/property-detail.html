@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <ol class="breadcrumb">
-                        <li><a href="">{% trans "Home" %}</a></li>
+                        <li><a href="{% if request.path == "/" %}/{% elif "/es/" in request.path %}/es/{% else %}/{% endif %}">{% trans "Home" %}</a></li>
                         <li><a class="active">{{ property.name }}</a></li>
                     </ol>
                 </div>
@@ -212,16 +212,16 @@
                     <h3 class="widget-title">{% trans "Recent Properties" %}</h3>
                     <div class="widget-content">
                         <div class="small-property-list">
-                            {% for property in recent_properties %}
+                            {% for latest_property in recent_properties %}
                                 <div class="small-property clearfix">
                                     <div class="property-small-picture col-sm-12 col-md-4">
-                                        <a href="/realestate/detail/{{ property.id }}">
-                                            <img src="{{ property.get_feature_picture.picture.thumbnail.url }}" alt="" class="img-responsive">
+                                        <a href="{{ latest_property.get_absolute_url }}">
+                                            <img src="{{ latest_property.get_feature_picture.picture.thumbnail.url }}" alt="" class="img-responsive">
                                         </a>
                                     </div>
                                     <div class="property-small-content col-sm-12 col-md-8">
-                                        <h4><a href="">{{ property.name }}</a></h4>
-                                        <p><span>${{ property.price | floatformat:"0" | intcomma }}</span></p>
+                                        <h4><a href="{{ latest_property.get_absolute_url }}">{{ latest_property.name }}</a></h4>
+                                        <p><span>${{ latest_property.price | floatformat:"0" | intcomma }}</span></p>
                                     </div>
                                 </div><!-- Small Property Ends -->
                             {% endfor %}

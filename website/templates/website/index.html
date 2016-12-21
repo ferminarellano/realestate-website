@@ -67,7 +67,7 @@
                         </div><!-- end .pic-address -->
                         <div class="description-wrap">
                             <div class="pic-description">
-                                <h3><a href="realestate/detail/{{ property.id }}">{{ property.name }}</a></h3>
+                                <h3><a href="{{ property.get_absolute_url }}">{{ property.name }}</a></h3>
                                 <p class="property-description-nrp">{{ property.description | truncatechars:100 }}
                             </p></div><!-- end .pic-description -->
                             <div class="pic-mesure" style="border-top: none;">

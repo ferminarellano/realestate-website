@@ -18,46 +18,49 @@ def index(request):
 	properties = Property.objects.filter(active=True).order_by('-featured','-id')
 	banner_items = IntroBanner.objects.filter(active=True).order_by('position')
 
-	template = loader.get_template('website/index.html')
+	template = 'website/index.html'
 
-	context = RequestContext(request, {
+	context = {
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
 		'properties': properties,
 		'banner_items': banner_items,
-		'request': request
-	})
-	return HttpResponse(template.render(context))
+		'request': request,
+		'redirect_to': "/",
+	}
+	return render(request, template, context)
 
 def about(request):
 	menu_items = MenuItem.objects.filter(active=True).order_by('position')
 	social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
 	testimonials = Testimonial.objects.filter(active=True).order_by('id')
 
-	template = loader.get_template('website/about.html')
+	template = 'website/about.html'
 
-	context = RequestContext(request, {
+	context = {
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
 		'testimonials': testimonials,
-		'request': request
-	})
-	return HttpResponse(template.render(context))
+		'request': request,
+		'redirect_to': "/about/",
+	}
+	return render(request, template, context)
 
 def howto(request):
 	menu_items = MenuItem.objects.filter(active=True).order_by('position')
 	social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
 	recent_properties = Property.objects.filter(active=True).order_by('-id')[:3]
 
-	template = loader.get_template('website/howto.html')
+	template = 'website/howto.html'
 
-	context = RequestContext(request, {
+	context = {
 		'menu_items': menu_items,
 		'social_profiles': social_profiles,
 		'properties': recent_properties,
-		'request': request
-	})
-	return HttpResponse(template.render(context))
+		'request': request,
+		'redirect_to': "/how-to/",
+	}
+	return render(request, template, context)
 
 def contact(request):
 	errors = []
@@ -203,7 +206,8 @@ def contact(request):
 		'email': email,
 		'subject': subject,
 		'message': message,
-		'request': request
+		'request': request,
+		'redirect_to': "/contact/",
 	}
 
 	return render(request, template, context)

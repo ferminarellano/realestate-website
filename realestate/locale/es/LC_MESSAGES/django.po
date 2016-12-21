@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-22 12:57-0600\n"
+"POT-Creation-Date: 2016-12-16 11:08-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: admin.py:21
+#: admin.py:22
 msgid "There can only be one featured picture in a property"
 msgstr "Solo puede haber una fotografía destacada en una propiedad."
 
@@ -26,80 +26,89 @@ msgstr "Solo puede haber una fotografía destacada en una propiedad."
 msgid "Real Estate"
 msgstr "Bienes Raices"
 
-#: models.py:8
+#: models.py:12
 msgid "Name"
 msgstr "Nombre"
 
-#: models.py:9 templates/realestate/property-detail.html:78
+#: models.py:13 templates/realestate/property-detail.html:78
 #: templates/realestate/property-detail.html:82
 msgid "Address"
 msgstr "Dirección"
 
-#: models.py:10 templates/realestate/property-detail.html:88
+#: models.py:14 templates/realestate/property-detail.html:88
 msgid "Neighborhood"
 msgstr "Barrio/Colonia/Aldea"
 
-#: models.py:11 templates/realestate/property-detail.html:83
+#: models.py:15 templates/realestate/property-detail.html:83
 msgid "City"
 msgstr "Ciudad"
 
-#: models.py:12 templates/realestate/property-detail.html:94
+#: models.py:16 templates/realestate/property-detail.html:94
 msgid "State"
 msgstr "Departamento"
 
-#: models.py:13 templates/realestate/property-detail.html:95
+#: models.py:17 templates/realestate/property-detail.html:95
 msgid "Country"
 msgstr "País"
 
-#: models.py:14 templates/realestate/property-detail.html:72
+#: models.py:18 templates/realestate/property-detail.html:72
 msgid "Description"
 msgstr "Descripción"
 
-#: models.py:15
+#: models.py:19
 msgid "Price"
 msgstr "Precio"
 
-#: models.py:16
+#: models.py:20
 msgid "Latitude"
 msgstr "Latitud"
 
-#: models.py:17
+#: models.py:21
 msgid "Longitude"
 msgstr "Longitud"
 
-#: models.py:18
+#: models.py:22
 msgid "Map Zoom"
 msgstr "Zoom del Mapa"
 
-#: models.py:19
+#: models.py:23
 msgid "Active"
 msgstr "Activo"
 
-#: models.py:26 models.py:29 models.py:39
+#: models.py:24
+msgid "Featured Property"
+msgstr "Propiedad Destacada"
+
+#: models.py:40 models.py:43 models.py:53
 msgid "Property"
 msgstr "Propiedad"
 
-#: models.py:30
+#: models.py:44
 msgid "Properties"
 msgstr "Propiedades"
 
-#: models.py:38
+#: models.py:52
 msgid "Picture"
 msgstr "Fotografía"
 
-#: models.py:40
+#: models.py:54
 msgid "Featured"
 msgstr "Destacada"
 
-#: models.py:43 models.py:46
+#: models.py:55
+msgid "Alternative Text"
+msgstr "Texto Alternativo"
+
+#: models.py:58 models.py:61
 msgid "Property Picture"
 msgstr "Fotografía de Propiedad"
 
-#: models.py:47
+#: models.py:62
 msgid "Property Pictures"
 msgstr "Fotografias de Propiedad"
 
 #: templates/realestate/property-detail.html:18
+#: templates/realestate/property-list.html:22
 msgid "Home"
 msgstr "Inicio"
 
@@ -149,6 +158,24 @@ msgstr "Propiedades Recientes"
 msgid "Sending Message, Please Wait"
 msgstr "Enviando mensaje, Porfavor espere"
 
+#: templates/realestate/property-list.html:18
+#: templates/realestate/property-list.html:23
+msgid "Our Listings"
+msgstr "Nuestras Propiedades"
+
+#: templates/realestate/property-list.html:80
+msgid "Read More"
+msgstr "Leer más"
+
+#: urls.py:7
+
+msgid "^realestate/detail/(?P<slug>[-\\w\\d\\_]+)$"
+msgstr "^bienesraices/detalles/(?P<slug>[-\\w\\d\\_]+)$"
+
+#: urls.py:8
+msgid "^realestate/properties/$"
+msgstr "^bienesraices/propiedades/$"
+
 #: views.py:45
 msgid "Please enter a valid name."
 msgstr "Porfavor ingrese un nombre válido."
@@ -169,7 +196,9 @@ msgstr "Porfavor ingrese un mensaje válido."
 msgid ""
 "We encountered some problems trying to send your message. Please write us "
 "directly to: naturerichproperties@gmail.com"
-msgstr "Nos encontramos con un problema al intentar envíar su mensaje. Porfavor escribenos directamente a: naturerichproperties@gmail.com"
+msgstr ""
+"Nos encontramos con un problema al intentar envíar su mensaje. Porfavor "
+"escribenos directamente a: naturerichproperties@gmail.com"
 
 #: views.py:134 views.py:143
 msgid "Your message was sent, we will contact you soon."

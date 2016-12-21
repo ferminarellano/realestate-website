@@ -5,7 +5,7 @@ class SiteConfigurationTranslationOptions(TranslationOptions):
     fields = ('sitename', 'address1', 'address2', 'about')
 
 class MenuItemTranslationOptions(TranslationOptions):
-    fields = ('name',)
+    fields = ('name', 'url')
 
 class IntroBannerTranslationOptions(TranslationOptions):
     fields = ('caption_title', 'caption_description')
