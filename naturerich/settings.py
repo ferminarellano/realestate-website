@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'solo',
     'stdimage',
     'tagging',
+    'django_summernote',
     'website.apps.WebsiteConfig',
     'realestate.apps.RealestateConfig'
 ]
@@ -92,6 +93,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+MEDIA_URL = '/media/'
 
 try:
 	from settings_local import *

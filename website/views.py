@@ -8,9 +8,13 @@ from django.utils.translation import ugettext_lazy as _
 import json
 from django.core.mail import send_mail
 from smtplib import SMTPException
+from django.shortcuts import get_object_or_404
+from django.utils import translation
+from django.core.urlresolvers import reverse
 
-from .models import MenuItem, SocialProfile, IntroBanner, Testimonial
+from .models import MenuItem, SocialProfile, IntroBanner, Testimonial, BlogPost
 from realestate.models import Property
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
 	menu_items = MenuItem.objects.filter(active=True).order_by('position')
@@ -59,6 +63,63 @@ def howto(request):
 		'properties': recent_properties,
 		'request': request,
 		'redirect_to': "/how-to/",
+	}
+	return render(request, template, context)
+
+def blog(request):
+	menu_items = MenuItem.objects.filter(active=True).order_by('position')
+	social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
+	recent_properties = Property.objects.filter(active=True).order_by('-id')[:3]
+	blog_items = BlogPost.objects.filter(active=True).order_by('date_published')
+	paginator = Paginator(blog_items, 3)
+
+	page = request.GET.get('page')
+	try:
+		posts = paginator.page(page)
+	except PageNotAnInteger:
+		posts = paginator.page(1)
+	except EmptyPage:
+		posts = paginator.page(paginator.num_pages)
+
+	template = 'website/blog.html'
+
+	context = {
+		'menu_items': menu_items,
+		'social_profiles': social_profiles,
+		'properties': recent_properties,
+		'posts': posts,
+		'request': request,
+		'redirect_to': "/blog/",
+	}
+	return render(request, template, context)
+
+def blog_item(request, slug):
+	menu_items = MenuItem.objects.filter(active=True).order_by('position')
+	social_profiles = SocialProfile.objects.filter(active=True).order_by('position')
+	recent_properties = Property.objects.filter(active=True).order_by('-id')[:3]
+	blog_items = BlogPost.objects.filter(active=True).order_by('date_published')
+	blog_post = get_object_or_404(BlogPost, slug = slug)
+	template = 'website/blog-item.html'
+
+	cur_language = translation.get_language()
+
+	try:
+		if cur_language == 'en':
+			translation.activate('es')
+			redirect_to = reverse('blog-detail-view', kwargs={'slug':blog_post.slug})
+		if cur_language == 'es':
+			translation.activate('en')
+			redirect_to = reverse('blog-detail-view', kwargs={'slug':blog_post.slug})
+	finally:
+		translation.activate(cur_language)
+
+	context = {
+		'menu_items': menu_items,
+		'social_profiles': social_profiles,
+		'properties': recent_properties,
+		'blog_post': blog_post,
+		'request': request,
+		'redirect_to': redirect_to,
 	}
 	return render(request, template, context)
 

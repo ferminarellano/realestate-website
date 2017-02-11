@@ -1,0 +1,122 @@
+{% extends "website/base.html" %}
+{% load admin_static %}
+{% load humanize %}
+{% load i18n %}
+{% load solo_tags %}
+{% get_solo 'website.SiteConfiguration' as site_config %}
+
+{% block content %}
+<section class="header-banner blog-banner">
+    <div class="banner-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <h2>{% trans "Recent Posts" %}</h2>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 blog-posts-area">
+                <div class="row blog-posts">
+
+                    {% for post in posts %}
+                        <div class="blog-single-post clearfix">
+                            <div class="col-md-1 post-dates">
+                                <span><i class="fa fa-calendar"></i> {{ post.date_published | date:"M"}}</span>
+                                <strong>{{ post.date_published | date:"d"}}</strong>
+                            </div>
+                            <div class="col-md-3 post-thumbnails">
+                                <a href="">
+                                    <img src="{{ post.picture.thumbnail.url }}" alt="{{ post.title }}" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="col-md-8 single-post-content">
+                                <h3 class="post-title">
+                                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                </h3>
+                                <p>{{ post.intro | safe }}</p>
+                                <a href="{{ post.get_absolute_url }}" class="btn btn-primary">{% trans "Read More" %}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                {% if posts.paginator.num_pages > 1%}
+                <div class="center blog-pagination">
+                    <ul class="list-unstyled list-inline">
+                        <li><a href="{% if posts.has_previous %}?page={{ posts.previous_page_number }}{% else %}#{% endif %}"><i class="fa fa-angle-double-left"></i></a></li>
+                        {% for page in posts.paginator.page_range %}
+                            <li><a href="?page={{page}}" {% if posts.number == page %}class="active"{% endif %}class="">{{ page }}</a></li>
+                        {% endfor %}
+                        <li><a href="{% if posts.has_next %}?page={{ posts.next_page_number }}{% else %}#{% endif %}"><i class="fa fa-angle-double-right"></i></a></li>
+                    </ul>
+                </div>
+                {% endif %}
+
+            </div><!-- Blog Post Area Ends -->
+            <div class="col-md-3 blog-sidebar">
+                {% comment %}
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Useful Links</h3>
+                    <div class="widget-content">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="">Terms &amp; onditions</a></li>
+                            <li><a href="">Privacy Policy</a></li>
+                            <li><a href="">FAQ and Help</a></li>
+                            <li><a href="">Mortgage Calculator</a></li>
+                            <li><a href="">Tips for better living</a></li>
+                            <li><a href="">Login</a></li>
+                            <li><a href="">Signup</a></li>
+                        </ul>
+                    </div>
+                </div><!-- Sidebar Widget Ends -->
+                {% endcomment %}
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">{% trans "Recent Properties" %}</h3>
+                    <div class="widget-content">
+                        <div class="small-property-list">
+                            {% for latest_property in properties %}
+                                <div class="small-property clearfix">
+                                    <div class="property-small-picture col-sm-12 col-md-4">
+                                        <a href="{{ latest_property.get_absolute_url }}">
+                                            <img src="{{ latest_property.get_feature_picture.picture.thumbnail.url }}" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="property-small-content col-sm-12 col-md-8">
+                                        <h4><a href="{{ latest_property.get_absolute_url }}">{{ latest_property.name }}</a></h4>
+                                        <p><span>${{ latest_property.price | floatformat:"0" | intcomma }}</span></p>
+                                    </div>
+                                </div><!-- Small Property Ends -->
+                            {% endfor %}
+                        </div>
+                    </div><!-- Widget content Ends -->
+                </div><!-- Sidebar Widget Ends -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">{% trans "Contact" %}</h3>
+                    <div class="widget-content">
+                        <div class="address-widget">
+                            <address>
+                                <strong>{{ site_config.sitename }}</strong><br><br>
+                                {{ site_config.address1 }}<br>
+                                {{ site_config.address2 }}<br>
+                            </address>
+                            <address>
+                                <abbr title="Phone">{% trans "Phone" %}:</abbr> {{ site_config.telephone }}<br>
+                                <abbr title="Email">{% trans "Email" %}:</abbr> <a href="mailto:{{ site_config.email}}">{{ site_config.email}}</a><br>
+                            </address>
+                            <a class="btn btn-primary" href="{% if "/es/" in request.path %}/es/contactenos/{% else %}/contact/{% endif %}">{% trans "Contact page" %}</a>
+                        </div>
+                    </div>
+                </div><!-- Sidebar Widget Ends -->
+            </div><!-- Blog Sidebar ends -->
+        </div>
+    </div>
+</section>
+{% endblock %}

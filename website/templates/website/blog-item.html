@@ -1,0 +1,61 @@
+{% extends "website/base.html" %}
+{% load admin_static %}
+{% load humanize %}
+{% load i18n %}
+{% load solo_tags %}
+{% get_solo 'website.SiteConfiguration' as site_config %}
+
+{% block content %}
+
+
+<section class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 content-page-inner-area">
+                <h1>{{ blog_post.title }}</h1>
+                {{ blog_post.content | safe }}
+            </div><!-- end content-page-inner-area -->
+
+            <div class="col-md-3 blog-sidebar content-page-right-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">{% trans "Recent Properties" %}</h3>
+                    <div class="widget-content">
+                        <div class="small-property-list">
+                            {% for latest_property in properties %}
+                                <div class="small-property clearfix">
+                                    <div class="property-small-picture col-sm-12 col-md-4">
+                                        <a href="{{ latest_property.get_absolute_url }}">
+                                            <img src="{{ latest_property.get_feature_picture.picture.thumbnail.url }}" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                    <div class="property-small-content col-sm-12 col-md-8">
+                                        <h4><a href="{{ latest_property.get_absolute_url }}">{{ latest_property.name }}</a></h4>
+                                        <p><span>${{ latest_property.price | floatformat:"0" | intcomma }}</span></p>
+                                    </div>
+                                </div><!-- Small Property Ends -->
+                            {% endfor %}
+                        </div>
+                    </div><!-- Widget content Ends -->
+                </div><!-- Sidebar Widget Ends -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">{% trans "Contact" %}</h3>
+                    <div class="widget-content">
+                        <div class="address-widget">
+                            <address>
+                                <strong>{{ site_config.sitename }}</strong><br><br>
+                                {{ site_config.address1 }}<br>
+                                {{ site_config.address2 }}<br>
+                            </address>
+                            <address>
+                                <abbr title="Phone">{% trans "Phone" %}:</abbr> {{ site_config.telephone }}<br>
+                                <abbr title="Email">{% trans "Email" %}:</abbr> <a href="mailto:{{ site_config.email}}">{{ site_config.email}}</a><br>
+                            </address>
+                            <a class="btn btn-primary" href="{% if "/es/" in request.path %}/es/contactenos/{% else %}/contact/{% endif %}">{% trans "Contact page" %}</a>
+                        </div>
+                    </div>
+                </div><!-- Sidebar Widget Ends -->
+            </div><!-- Blog Sidebar ends -->
+        </div>
+    </div>
+</section>
+{% endblock %}

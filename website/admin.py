@@ -1,7 +1,8 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 from solo.admin import SingletonModelAdmin
-from website.models import SiteConfiguration, MenuItem, SocialProfile, IntroBanner, Testimonial
+from website.models import SiteConfiguration, MenuItem, SocialProfile, IntroBanner, Testimonial, BlogPost
+from django_summernote.admin import SummernoteModelAdmin
 
 class SiteConfigurationAdmin(SingletonModelAdmin, TranslationAdmin):
     group_fieldsets = True
@@ -25,8 +26,13 @@ class TestimonialAdmin(TranslationAdmin):
     list_display = ('name', 'title', 'active')
     list_editable = ['active']
 
+class BlogPostAdmin(SummernoteModelAdmin, TranslationAdmin):
+    group_fieldsets = True
+    list_display = ('title', 'date_published')
+
 admin.site.register(SiteConfiguration, SiteConfigurationAdmin)
 admin.site.register(MenuItem, MenuItemAdmin)
 admin.site.register(SocialProfile, SocialProfileAdmin)
 admin.site.register(IntroBanner, IntroBannerAdmin)
 admin.site.register(Testimonial, TestimonialAdmin)
+admin.site.register(BlogPost, BlogPostAdmin)

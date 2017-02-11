@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from solo.models import SingletonModel
 from stdimage.models import StdImageField
+from django.utils.text import slugify
+from django.core.urlresolvers import reverse
 
 class SiteConfiguration(SingletonModel):
     sitename = models.CharField(verbose_name=_("Site name"), max_length=255, default="Site Name")
@@ -84,3 +86,21 @@ class Testimonial(models.Model):
     class Meta:
         verbose_name = _("Testimonial")
         verbose_name_plural = _("Testimonials")
+
+class BlogPost(models.Model):
+    title = models.CharField(verbose_name=_("Title"), max_length=255)
+    content = models.TextField(verbose_name=_("Content"), blank=True, null=True)
+    intro = models.TextField(verbose_name=_("Introduction"), blank=True, null=True)
+    picture = StdImageField(upload_to="blog_pics", blank=True, variations={
+        'thumbnail': (200, 200, True),
+    }, verbose_name=_("Picture"))
+    date_published = models.DateField(verbose_name=_("Date Published"))
+    slug = models.SlugField(max_length=255, blank=True, null=True)
+    active = models.BooleanField(verbose_name=_("Active"), default = True)
+
+    def get_absolute_url(self):
+        return reverse('blog-detail-view', args=(self.slug,))
+
+    def save(self):
+        self.slug = slugify(self.title)
+        super(BlogPost, self).save()
